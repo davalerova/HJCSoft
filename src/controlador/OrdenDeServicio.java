@@ -23,6 +23,8 @@ public class OrdenDeServicio{
     private TipoProblemaProducto tipoProblemaProductoOrdenDeServicio;
     private StringProperty descripcionProblemaProductoOrdenDeServicio;
     private LugarReparacion lugarReparacionOrdenDeServicio;
+    private EstadoOrdenDeServicio estadoOrdenDeServicio;
+    private CondicionOrdenDeServicio condicionOrdenDeServicio;
 
     public OrdenDeServicio(int idOrdenDeServicio, String folioOrdenDeServicio, Date fechaSolicitudOrdenDeServicio,
                            TipoCliente tipoClienteOrdenDeServicio, TipoServicio tipoServicioOrdenDeServicio, String distribuidorOrdenDeServicio,
