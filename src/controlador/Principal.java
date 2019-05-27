@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Principal {//implements Initializable {
+public class Principal implements Initializable {
     Stage principal;
     Vistas vista= new Vistas();
 
@@ -30,7 +30,7 @@ public class Principal {//implements Initializable {
         getPrincipal().close();
     }
 
-    /*@FXML
+    @FXML
     public void cerrarSesion(ActionEvent evt){
         getPrincipal().hide();
         Stage login = new Stage();
@@ -52,5 +52,5 @@ public class Principal {//implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-    }*/
+    }
 }
