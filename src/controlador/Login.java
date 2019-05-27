@@ -1,4 +1,4 @@
-package modelo;
+package controlador;
 
 public class Login {
     public String usuario;

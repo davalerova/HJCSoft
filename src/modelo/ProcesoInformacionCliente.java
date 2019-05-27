@@ -4,6 +4,8 @@ package modelo;
  *
  * @author sala1
  */
+import controlador.Login;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

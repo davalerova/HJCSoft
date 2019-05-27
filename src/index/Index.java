@@ -1,4 +1,4 @@
-package interfaz;
+package index;
 
 
 import javafx.application.*;
@@ -9,13 +9,13 @@ import javafx.fxml.*;
 
 import java.util.Scanner;
 
-import modelo.Captcha;
+import controlador.Captcha;
 import modelo.Cliente;
 import modelo.ProcesoInformacionCliente;
-import modelo.Login;
+import controlador.Login;
 
 
-public class Main extends Application {
+public class Index extends Application {
     private Scanner input;
     private Cliente cliente;
     private ProcesoInformacionCliente procesoCliente;
@@ -39,7 +39,7 @@ public class Main extends Application {
     @FXML
     private TextField salida;
 
-    public Main() {
+    public Index() {
         this.input=new Scanner(System.in);
         this.procesoCliente=new ProcesoInformacionCliente();
         this.cliente=new Cliente();
@@ -90,7 +90,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args){
-        Main app=new Main();
+        Index app=new Index();
         while(true){
             Application.launch(args);
             if(app.iniciaSesion())break;
