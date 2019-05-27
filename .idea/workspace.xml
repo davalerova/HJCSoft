@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Driver__2_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HJCSoft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HJCSoft.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaz/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/Captcha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/Captcha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/Login.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -83,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/interfaz/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-334">
-              <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+            <state relative-caret-position="493">
+              <caret line="85" column="30" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,7 +149,7 @@
         <entry file="file://$PROJECT_DIR$/../TutorialJavaFX/src/controlador/Login.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="14" selection-start-column="14" selection-end-column="14" />
+              <caret column="8" selection-start-column="8" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#573#574#0" expanded="true" />
@@ -305,16 +298,16 @@
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\daval\IdeaProjects\HJCSoft\src\vista" />
-      <recent name="C:\Users\daval\IdeaProjects\HJCSoft\src\interfaz" />
-      <recent name="C:\Users\daval\IdeaProjects\HJCSoft" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="controlador" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\daval\IdeaProjects\HJCSoft\Driver" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="controlador" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\daval\IdeaProjects\HJCSoft\src\vista" />
+      <recent name="C:\Users\daval\IdeaProjects\HJCSoft\src\interfaz" />
+      <recent name="C:\Users\daval\IdeaProjects\HJCSoft" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -451,7 +444,7 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -463,7 +456,7 @@
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.32941177" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.32418302" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -850,7 +843,7 @@
     <entry file="file://$PROJECT_DIR$/../TutorialJavaFX/src/controlador/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#573#574#0" expanded="true" />
@@ -907,8 +900,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/interfaz/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334">
-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        <state relative-caret-position="493">
+          <caret line="85" column="30" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
