@@ -42,6 +42,7 @@ public class Principal implements Initializable {
             Parent root = (Parent)loginn.load();
             Scene escena=new Scene(root);
             login.setScene(escena);
+            login.setTitle("HJCSoft");
             log.setLogin(login);
             login.show();
         }catch (IOException e){

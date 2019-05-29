@@ -1,60 +1,372 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1435.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-    <center>
-        <Pane prefHeight="516.0" prefWidth="1435.0" BorderPane.alignment="CENTER" />
-    </center>
-    <bottom>
-        <Pane prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-            <children>
-                <Label layoutX="14.0" layoutY="7.0" text="© daval" />
-            </children>
-        </Pane>
-    </bottom>
-    <top>
-        <BorderPane prefHeight="105.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-            <top>
-                <MenuBar BorderPane.alignment="CENTER">
-                    <menus>
-                        <Menu mnemonicParsing="false" text="Archivo">
-                            <items>
-                                <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar Sesión" />
-                                <SeparatorMenuItem mnemonicParsing="false" />
-                                <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
-                            </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Edit">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Delete" />
-                            </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Help">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="About" />
-                            </items>
-                        </Menu>
-                    </menus>
-                </MenuBar>
-            </top>
-            <center>
-                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="602.0" prefWidth="1011.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TabPane prefHeight="560.0" prefWidth="1011.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <tabs>
-                        <Tab text="Inicio" />
-                        <Tab text="Asignación" />
-                  <Tab text="Reporte técnico" />
+                      <Tab text="Inicio">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                      <Tab text="Ingreso">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <BorderPane prefHeight="551.0" prefWidth="1292.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <left>
+                                          <Pane prefHeight="547.0" prefWidth="433.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <AnchorPane layoutX="5.0" layoutY="14.0" prefHeight="523.0" prefWidth="420.0">
+                                                   <children>
+                                                      <GridPane prefHeight="523.0" prefWidth="422.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-48.0" AnchorPane.topAnchor="0.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="335.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Label text="Folio:" />
+                                                                  <TextField prefHeight="25.0" prefWidth="60.0" />
+                                                                  <Label text="Fecha de solicitud:">
+                                                                     <padding>
+                                                                        <Insets left="133.0" />
+                                                                     </padding></Label>
+                                                                  <DatePicker prefHeight="25.0" prefWidth="101.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                                               <children>
+                                                                  <Label text="Tipo de garantía:" />
+                                                                  <ComboBox prefWidth="150.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                                               <children>
+                                                                  <Label text="Tipo de cliente:" />
+                                                                  <ComboBox prefWidth="150.0" />
+                                                                  <Label text="Documento:">
+                                                                     <HBox.margin>
+                                                                        <Insets left="5.0" />
+                                                                     </HBox.margin>
+                                                                  </Label>
+                                                                  <TextField prefHeight="25.0" prefWidth="120.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                                               <children>
+                                                                  <Label text="Nombres:" />
+                                                                  <TextField prefHeight="25.0" prefWidth="152.0" />
+                                                                  <Label text="Apellidos:">
+                                                                     <HBox.margin>
+                                                                        <Insets left="15.0" />
+                                                                     </HBox.margin>
+                                                                  </Label>
+                                                                  <TextField prefHeight="25.0" prefWidth="150.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+                                                               <children>
+                                                                  <Label text="Correo electrónico:" />
+                                                                  <TextField prefHeight="25.0" prefWidth="320.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+                                                               <children>
+                                                                  <Label text="Código postal:" />
+                                                                  <TextField prefHeight="25.0" prefWidth="90.0" />
+                                                                  <Label text="Teléfono fijo:">
+                                                                     <padding>
+                                                                        <Insets left="95.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                                  <TextField prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+                                                               <children>
+                                                                  <Label text="Celular:" />
+                                                                  <TextField prefHeight="25.0" prefWidth="90.0" />
+                                                                  <Label text="Teléfono alternativo:">
+                                                                     <HBox.margin>
+                                                                        <Insets left="92.0" />
+                                                                     </HBox.margin></Label>
+                                                                  <TextField prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
+                                                               <children>
+                                                                  <Label text="Dirección:" />
+                                                                  <TextField prefHeight="25.0" prefWidth="368.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="428.0" GridPane.rowIndex="8">
+                                                               <children>
+                                                                  <Label text="Departamento:" />
+                                                                  <ComboBox prefWidth="150.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
+                                                               <children>
+                                                                  <Label text="Municipio:" />
+                                                                  <ComboBox prefWidth="150.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="10">
+                                                               <children>
+                                                                  <Label text="Gama:" />
+                                                                  <ComboBox prefWidth="168.0" />
+                                                                  <Label text="Marca:">
+                                                                     <HBox.margin>
+                                                                        <Insets left="15.0" />
+                                                                     </HBox.margin></Label>
+                                                                  <ComboBox prefWidth="168.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="11">
+                                                               <children>
+                                                                  <Label text="Fecha de compra:" />
+                                                                  <DatePicker prefHeight="25.0" prefWidth="101.0" />
+                                                                  <Label text="Fecha de compromiso:">
+                                                                     <HBox.margin>
+                                                                        <Insets left="5.0" />
+                                                                     </HBox.margin>
+                                                                  </Label>
+                                                                  <DatePicker prefHeight="25.0" prefWidth="101.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="12">
+                                                               <children>
+                                                                  <Label text="Distribuidor:" />
+                                                                  <ComboBox prefWidth="205.0" />
+                                                                  <Label text="Jornada:">
+                                                                     <HBox.margin>
+                                                                        <Insets left="5.0" />
+                                                                     </HBox.margin>
+                                                                  </Label>
+                                                                  <ComboBox prefWidth="100.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="13">
+                                                               <children>
+                                                                  <Label text="Tipo de problema:" />
+                                                                  <ComboBox prefHeight="25.0" prefWidth="324.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="14">
+                                                               <children>
+                                                                  <Label text="Descripción del problema:" />
+                                                                  <TextField prefHeight="25.0" prefWidth="282.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="15">
+                                                               <children>
+                                                                  <Label text="Producto:" />
+                                                                  <ComboBox prefWidth="233.0" />
+                                                                  <Label text="Valor:">
+                                                                     <HBox.margin>
+                                                                        <Insets left="15.0" />
+                                                                     </HBox.margin></Label>
+                                                                  <TextField prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="16">
+                                                               <children>
+                                                                  <Label text="N° de serie:" />
+                                                                  <TextField prefHeight="25.0" prefWidth="118.0" />
+                                                                  <Label text="Fuente de energía:">
+                                                                     <HBox.margin>
+                                                                        <Insets left="5.0" />
+                                                                     </HBox.margin>
+                                                                  </Label>
+                                                                  <ComboBox prefHeight="25.0" prefWidth="138.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="17">
+                                                               <children>
+                                                                  <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="422.0" spacing="5.0">
+                                                                     <children>
+                                                                        <Button mnemonicParsing="false" text="Guardar" />
+                                                                        <Button mnemonicParsing="false" text="Actualizar" />
+                                                                        <Button mnemonicParsing="false" text="Eliminar" />
+                                                                        <Button mnemonicParsing="false" text="Nuevo" />
+                                                                        <Button mnemonicParsing="false" text="Buscar" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </Pane>
+                                       </left>
+                                       <center>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <TableView prefHeight="551.0" prefWidth="892.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <columns>
+                                                    <TableColumn prefWidth="58.0" text="Folio" />
+                                                      <TableColumn prefWidth="214.0" text="Nombre" />
+                                                      <TableColumn prefWidth="239.0" text="Dirección" />
+                                                      <TableColumn prefWidth="111.0" text="Fecha de solicitud" />
+                                                      <TableColumn prefWidth="111.0" text="Gama" />
+                                                      <TableColumn prefWidth="111.0" text="Estado" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Asignación">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.29797979797979796" prefHeight="551.0" prefWidth="1292.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Reporte Técnico">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
                     </tabs>
-                </TabPane>
-            </center>
-        </BorderPane>
-    </top>
-</BorderPane>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <BorderPane prefHeight="80.0" prefWidth="1292.0" BorderPane.alignment="CENTER">
+               <center>
+                  <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Archivo">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Cerrar sesión" />
+                              <MenuItem mnemonicParsing="false" text="Salir" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edición">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Ayuda">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </center>
+               <top>
+                  <AnchorPane prefHeight="45.0" prefWidth="1292.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <BorderPane layoutY="-1.0" prefHeight="75.0" prefWidth="1292.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <right>
+                              <GridPane BorderPane.alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Usuario:" />
+                                    <Label text="Rol:" GridPane.rowIndex="1" />
+                                    <Label text="CSA:" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                           </right>
+                           <left>
+                              <ImageView fitHeight="75.0" fitWidth="346.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                 <image>
+                                    <Image url="@../recursos/LogoHJC.png" />
+                                 </image>
+                              </ImageView>
+                           </left>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+            </BorderPane>
+         </top>
+         <bottom>
+            <HBox prefHeight="24.0" prefWidth="1292.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Sistema HJCSoft Versión: 1.0 2019 © Desarrollado por TardigradeSoft">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></Label>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
