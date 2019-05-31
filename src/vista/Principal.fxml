@@ -8,12 +8,14 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -344,6 +346,24 @@
                                                                <children>
                                                                   <Label text="Nacionalidad:" />
                                                                   <TextField prefHeight="25.0" prefWidth="120.0" />
+                                                                  <Label text="Usuario sistema:">
+                                                                     <padding>
+                                                                        <Insets left="35.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                                  <RadioButton mnemonicParsing="false" text="Sí">
+                                                                     <padding>
+                                                                        <Insets left="5.0" />
+                                                                     </padding>
+                                                                     <toggleGroup>
+                                                                        <ToggleGroup fx:id="UsuarioSistema" />
+                                                                     </toggleGroup>
+                                                                  </RadioButton>
+                                                                  <RadioButton mnemonicParsing="false" text="No" toggleGroup="$UsuarioSistema">
+                                                                     <padding>
+                                                                        <Insets left="5.0" />
+                                                                     </padding>
+                                                                  </RadioButton>
                                                                </children>
                                                             </HBox>
                                                             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
