@@ -4,11 +4,10 @@ package modelo;
  *
  * @author sala1
  */
-import controlador.Login;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import controlador.Sesion;
 
 public class ProcesoInformacionCliente {
 
@@ -136,9 +135,9 @@ public class ProcesoInformacionCliente {
         }
     }
 
-    public String validarUsuario(Login login) {
+    public String validarUsuario(Sesion sesion) {
         String usuario = "";
-        String contrasena = login.getContrasena();
+        String contrasena = sesion.getContrasena();
         String consultaSql = "SELECT*FROM usuario WHERE passwordusu=md5(?)";
         try {
             PreparedStatement inst = conexion.getConnection().prepareStatement(consultaSql);
@@ -206,9 +205,9 @@ public class ProcesoInformacionCliente {
             System.out.println(ex.toString());
         }
     }
-    public void registrarLoginFallido(Login login) {
-        String usuario = login.getUsuario();
-        String clave = login.getContrasena();
+    public void registrarLoginFallido(Sesion sesion) {
+        String usuario = sesion.getUsuario();
+        String clave = sesion.getContrasena();
         String registroCliente = "INSERT INTO loginfaillog(loginlog,passwordlog) VALUES(?,?)";
 
         try {
