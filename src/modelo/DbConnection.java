@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 public class DbConnection {
 
-    private String bd = "empresa";
+    private String bd = "HJCSoftDB";
     private String password = "postgresqldvd";
     private String url = "jdbc:postgresql://localhost:5432/" + bd;
     Connection conn = null;

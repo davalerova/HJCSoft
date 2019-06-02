@@ -1,57 +1,85 @@
 package controlador;
 
+import javafx.beans.property.*;
+import javafx.collections.ObservableList;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import java.sql.*;
 
-import java.sql.Date;
 
 public class Empleado{
     private IntegerProperty idEmpleado;
-    private StringProperty nombresEmpleado;
-    private StringProperty apellidosEmpleado;
+    private Rol rolIdEmpleado;
+    private Date fechaIngresoEmpleado;
     private StringProperty nacionalidadEmpleado;
-    private DocumentoIdentidad documentoIdentidadEmpleado;
-    private IntegerProperty numeroDocumentoIdentidadEmpleado;
-    private StringProperty lugarExpedicionDocumentoIdentidadEmpleado;
-    private Date fechaExpedicionDocumentoIdentidadEmpleado;
+    private SimpleBooleanProperty empleadoEsUsuarioSistema;
+    private TipoDocumentoIdentidad tipoDocumentoIdEmpleado;
+    private StringProperty numeroDocumentoIdentidadEmpleado;
+    private StringProperty lugarExpedicionDocumentoIdentiadEmpleado;
+    private Date fechaExpedicionDocumentoIdentiadEmpleado;
     private StringProperty lugarNacimientoEmpleado;
     private Date fechaNacimientoEmpleado;
+    private StringProperty nombresEmpleado;
+    private StringProperty apellidosEmpleado;
     private StringProperty emailEmpleado;
-    private StringProperty telefonoFijoEmpleado;
-    private StringProperty telefonoCelularEmpleado;
-    private StringProperty direccionResidenciaEmpleado;
+    private StringProperty codigoPostalEmpleado;
+    private StringProperty telefonoEmpleado;
+    private StringProperty celularEmpleado;
+    private StringProperty telefonoAlternativoEmpleado;
+    private StringProperty direccionEmpleado;
+    private StringProperty barrioEmpleado;
+    private StringProperty upzEmpleado;
+    private StringProperty localidadEmpleado;
+    private StringProperty municipioEmpleado;
+    private StringProperty departamentoEmpleado;
     private StringProperty nombrePersonaContactoEmpleado;
-    private StringProperty celularPersonaContactoEmpleado;
-    private TipoContrato tipoContratoEmpleado;
+    private StringProperty celualarPersonaContactoEmpleado;
+    private TipoSalario tipoSalarioEmpleado;
     private IntegerProperty sueldoBaseEmpleado;
 
-    public Empleado(int idEmpleado, String nombresEmpleado, String apellidosEmpleado,
-                    String nacionalidadEmpleado, DocumentoIdentidad documentoIdentidadEmpleado, int numeroDocumentoIdentidadEmpleado,
-                    String lugarExpedicionDocumentoIdentidadEmpleado, Date fechaExpedicionDocumentoIdentidadEmpleado, String lugarNacimientoEmpleado,
-                    Date fechaNacimientoEmpleado, String emailEmpleado, String telefonoFijoEmpleado,
-                    String telefonoCelularEmpleado, String direccionResidenciaEmpleado, String nombrePersonaContactoEmpleado,
-                    String celularPersonaContactoEmpleado, TipoContrato tipoContratoEmpleado, int sueldoBaseEmpleado) {
+    public Empleado(int idEmpleado, Rol rolIdEmpleado, Date fechaIngresoEmpleado,
+                    String nacionalidadEmpleado, boolean empleadoEsUsuarioSistema, TipoDocumentoIdentidad tipoDocumentoIdEmpleado,
+                    String numeroDocumentoIdentidadEmpleado, String lugarExpediciónDocumentoIdentiadEmpleado, Date fechaExpediciónDocumentoIdentiadEmpleado,
+                    String lugarNacimientoEmpleado, Date fechaNacimientoEmpleado, String nombresEmpleado,
+                    String apellidosEmpleado, String emailEmpleado, String codigoPostalEmpleado,
+                    String telefonoEmpleado, String celularEmpleado, String telefonoAlternativoEmpleado,
+                    String direccionEmpleado, String barrioEmpleado, String upzEmpleado,
+                    String localidadEmpleado, String municipioEmpleado, String departamentoEmpleado,
+                    String nombrePersonaContactoEmpleado, String celualarPersonaContactoEmpleado, TipoSalario tipoSalarioEmpleado,
+                    int sueldoBaseEmpleado) {
         this.idEmpleado = new SimpleIntegerProperty(idEmpleado);
-        this.nombresEmpleado = new SimpleStringProperty(nombresEmpleado);
-        this.apellidosEmpleado = new SimpleStringProperty(apellidosEmpleado);
+        this.rolIdEmpleado = rolIdEmpleado;
+        this.fechaIngresoEmpleado = fechaIngresoEmpleado;
         this.nacionalidadEmpleado = new SimpleStringProperty(nacionalidadEmpleado);
-        this.documentoIdentidadEmpleado = documentoIdentidadEmpleado;
-        this.numeroDocumentoIdentidadEmpleado = new SimpleIntegerProperty(numeroDocumentoIdentidadEmpleado);
-        this.lugarExpedicionDocumentoIdentidadEmpleado = new SimpleStringProperty(lugarExpedicionDocumentoIdentidadEmpleado);
-        this.fechaExpedicionDocumentoIdentidadEmpleado = fechaExpedicionDocumentoIdentidadEmpleado;
+        this.empleadoEsUsuarioSistema = new SimpleBooleanProperty(empleadoEsUsuarioSistema);
+        this.tipoDocumentoIdEmpleado = tipoDocumentoIdEmpleado;
+        this.numeroDocumentoIdentidadEmpleado = new SimpleStringProperty(numeroDocumentoIdentidadEmpleado);
+        this.lugarExpedicionDocumentoIdentiadEmpleado = new SimpleStringProperty(lugarExpediciónDocumentoIdentiadEmpleado);
+        this.fechaExpedicionDocumentoIdentiadEmpleado = fechaExpediciónDocumentoIdentiadEmpleado;
         this.lugarNacimientoEmpleado = new SimpleStringProperty(lugarNacimientoEmpleado);
         this.fechaNacimientoEmpleado = fechaNacimientoEmpleado;
+        this.nombresEmpleado = new SimpleStringProperty(nombresEmpleado);
+        this.apellidosEmpleado = new SimpleStringProperty(apellidosEmpleado);
         this.emailEmpleado = new SimpleStringProperty(emailEmpleado);
-        this.telefonoFijoEmpleado = new SimpleStringProperty(telefonoFijoEmpleado);
-        this.telefonoCelularEmpleado = new SimpleStringProperty(telefonoCelularEmpleado);
-        this.direccionResidenciaEmpleado = new SimpleStringProperty(direccionResidenciaEmpleado);
+        this.codigoPostalEmpleado = new SimpleStringProperty(codigoPostalEmpleado);
+        this.telefonoEmpleado = new SimpleStringProperty(telefonoEmpleado);
+        this.celularEmpleado = new SimpleStringProperty(celularEmpleado);
+        this.telefonoAlternativoEmpleado = new SimpleStringProperty(telefonoAlternativoEmpleado);
+        this.direccionEmpleado = new SimpleStringProperty(direccionEmpleado);
+        this.barrioEmpleado = new SimpleStringProperty(barrioEmpleado);
+        this.upzEmpleado = new SimpleStringProperty(upzEmpleado);
+        this.localidadEmpleado = new SimpleStringProperty(localidadEmpleado);
+        this.municipioEmpleado = new SimpleStringProperty(municipioEmpleado);
+        this.departamentoEmpleado = new SimpleStringProperty(departamentoEmpleado);
         this.nombrePersonaContactoEmpleado = new SimpleStringProperty(nombrePersonaContactoEmpleado);
-        this.celularPersonaContactoEmpleado = new SimpleStringProperty(celularPersonaContactoEmpleado);
-        this.tipoContratoEmpleado = tipoContratoEmpleado;
+        this.celualarPersonaContactoEmpleado = new SimpleStringProperty(celualarPersonaContactoEmpleado);
+        this.tipoSalarioEmpleado = tipoSalarioEmpleado;
         this.sueldoBaseEmpleado = new SimpleIntegerProperty(sueldoBaseEmpleado);
+    }
+
+    public Empleado(String nombresEmpleado,
+                    String apellidosEmpleado) {
+        this.nombresEmpleado = new SimpleStringProperty(nombresEmpleado);
+        this.apellidosEmpleado = new SimpleStringProperty(apellidosEmpleado);
     }
 
     //Metodos atributo: idEmpleado
@@ -63,6 +91,91 @@ public class Empleado{
     }
     public IntegerProperty IdEmpleadoProperty() {
         return idEmpleado;
+    }
+    //Metodos atributo: rolIdEmpleado
+    public Rol getRolIdEmpleado() {
+        return rolIdEmpleado;
+    }
+    public void setRolIdEmpleado(Rol rolIdEmpleado) {
+        this.rolIdEmpleado = rolIdEmpleado;
+    }
+    //Metodos atributo: fechaIngresoEmpleado
+    public Date getFechaIngresoEmpleado() {
+        return fechaIngresoEmpleado;
+    }
+    public void setFechaIngresoEmpleado(Date fechaIngresoEmpleado) {
+        this.fechaIngresoEmpleado = fechaIngresoEmpleado;
+    }
+    //Metodos atributo: nacionalidadEmpleado
+    public String getNacionalidadEmpleado() {
+        return nacionalidadEmpleado.get();
+    }
+    public void setNacionalidadEmpleado(String nacionalidadEmpleado) {
+        this.nacionalidadEmpleado = new SimpleStringProperty(nacionalidadEmpleado);
+    }
+    public StringProperty NacionalidadEmpleadoProperty() {
+        return nacionalidadEmpleado;
+    }
+    //Metodos atributo: empleadoEsUsuarioSistema
+    public boolean getEmpleadoEsUsuarioSistema() {
+        return empleadoEsUsuarioSistema.get();
+    }
+    public void setEmpleadoEsUsuarioSistema(boolean empleadoEsUsuarioSistema) {
+        this.empleadoEsUsuarioSistema = new SimpleBooleanProperty(empleadoEsUsuarioSistema);
+    }
+    public BooleanProperty EmpleadoEsUsuarioSistemaProperty() {
+        return empleadoEsUsuarioSistema;
+    }
+    //Metodos atributo: tipoDocumentoIdEmpleado
+    public TipoDocumentoIdentidad getTipoDocumentoIdEmpleado() {
+        return tipoDocumentoIdEmpleado;
+    }
+    public void setTipoDocumentoIdEmpleado(TipoDocumentoIdentidad tipoDocumentoIdEmpleado) {
+        this.tipoDocumentoIdEmpleado = tipoDocumentoIdEmpleado;
+    }
+    //Metodos atributo: numeroDocumentoIdentidadEmpleado
+    public String getNumeroDocumentoIdentidadEmpleado() {
+        return numeroDocumentoIdentidadEmpleado.get();
+    }
+    public void setNumeroDocumentoIdentidadEmpleado(String numeroDocumentoIdentidadEmpleado) {
+        this.numeroDocumentoIdentidadEmpleado = new SimpleStringProperty(numeroDocumentoIdentidadEmpleado);
+    }
+    public StringProperty NumeroDocumentoIdentidadEmpleadoProperty() {
+        return numeroDocumentoIdentidadEmpleado;
+    }
+    //Metodos atributo: lugarExpediciónDocumentoIdentiadEmpleado
+    public String getLugarExpediciónDocumentoIdentiadEmpleado() {
+        return lugarExpedicionDocumentoIdentiadEmpleado.get();
+    }
+    public void setLugarExpediciónDocumentoIdentiadEmpleado(String lugarExpediciónDocumentoIdentiadEmpleado) {
+        this.lugarExpedicionDocumentoIdentiadEmpleado = new SimpleStringProperty(lugarExpediciónDocumentoIdentiadEmpleado);
+    }
+    public StringProperty LugarExpediciónDocumentoIdentiadEmpleadoProperty() {
+        return lugarExpedicionDocumentoIdentiadEmpleado;
+    }
+    //Metodos atributo: fechaExpedicionDocumentoIdentiadEmpleado
+    public Date getFechaExpedicionDocumentoIdentiadEmpleado() {
+        return fechaExpedicionDocumentoIdentiadEmpleado;
+    }
+    public void setFechaExpedicionDocumentoIdentiadEmpleado(Date fechaExpedicionDocumentoIdentiadEmpleado) {
+        this.fechaExpedicionDocumentoIdentiadEmpleado = fechaExpedicionDocumentoIdentiadEmpleado;
+    }
+    //Metodos atributo: lugarNacimientoEmpleado
+    public String getLugarNacimientoEmpleado() {
+        return lugarNacimientoEmpleado.get();
+    }
+    public void setLugarNacimientoEmpleado(String lugarNacimientoEmpleado) {
+        this.lugarNacimientoEmpleado = new SimpleStringProperty(lugarNacimientoEmpleado);
+    }
+    public StringProperty LugarNacimientoEmpleadoProperty() {
+        return lugarNacimientoEmpleado;
+    }
+    //Metodos atributo: fechaNacimientoEmpleado
+    public Date getFechaNacimientoEmpleado() {
+        return fechaNacimientoEmpleado;
+    }
+    public void setFechaNacimientoEmpleado(Date fechaNacimientoEmpleado) {
+        this.fechaNacimientoEmpleado = fechaNacimientoEmpleado;
     }
     //Metodos atributo: nombresEmpleado
     public String getNombresEmpleado() {
@@ -84,67 +197,6 @@ public class Empleado{
     public StringProperty ApellidosEmpleadoProperty() {
         return apellidosEmpleado;
     }
-    //Metodos atributo: nacionalidadEmpleado
-    public String getNacionalidadEmpleado() {
-        return nacionalidadEmpleado.get();
-    }
-    public void setNacionalidadEmpleado(String nacionalidadEmpleado) {
-        this.nacionalidadEmpleado = new SimpleStringProperty(nacionalidadEmpleado);
-    }
-    public StringProperty NacionalidadEmpleadoProperty() {
-        return nacionalidadEmpleado;
-    }
-    //Metodos atributo: documentoIdentidadEmpleado
-    public DocumentoIdentidad getDocumentoIdentidadEmpleado() {
-        return documentoIdentidadEmpleado;
-    }
-    public void setDocumentoIdentidadEmpleado(DocumentoIdentidad documentoIdentidadEmpleado) {
-        this.documentoIdentidadEmpleado = documentoIdentidadEmpleado;
-    }
-    //Metodos atributo: numeroDocumentoIdentidadEmpleado
-    public int getNumeroDocumentoIdentidadEmpleado() {
-        return numeroDocumentoIdentidadEmpleado.get();
-    }
-    public void setNumeroDocumentoIdentidadEmpleado(int numeroDocumentoIdentidadEmpleado) {
-        this.numeroDocumentoIdentidadEmpleado = new SimpleIntegerProperty(numeroDocumentoIdentidadEmpleado);
-    }
-    public IntegerProperty NumeroDocumentoIdentidadEmpleadoProperty() {
-        return numeroDocumentoIdentidadEmpleado;
-    }
-    //Metodos atributo: lugarExpedicionDocumentoIdentidadEmpleado
-    public String getLugarExpedicionDocumentoIdentidadEmpleado() {
-        return lugarExpedicionDocumentoIdentidadEmpleado.get();
-    }
-    public void setLugarExpedicionDocumentoIdentidadEmpleado(String lugarExpedicionDocumentoIdentidadEmpleado) {
-        this.lugarExpedicionDocumentoIdentidadEmpleado = new SimpleStringProperty(lugarExpedicionDocumentoIdentidadEmpleado);
-    }
-    public StringProperty LugarExpedicionDocumentoIdentidadEmpleadoProperty() {
-        return lugarExpedicionDocumentoIdentidadEmpleado;
-    }
-    //Metodos atributo: fechaExpedicionDocumentoIdentidadEmpleado
-    public Date getFechaExpedicionDocumentoIdentidadEmpleado() {
-        return fechaExpedicionDocumentoIdentidadEmpleado;
-    }
-    public void setFechaExpedicionDocumentoIdentidadEmpleado(Date fechaExpedicionDocumentoIdentidadEmpleado) {
-        this.fechaExpedicionDocumentoIdentidadEmpleado = fechaExpedicionDocumentoIdentidadEmpleado;
-    }
-    //Metodos atributo: lugarNacimientoEmpleado
-    public String getLugarNacimientoEmpleado() {
-        return lugarNacimientoEmpleado.get();
-    }
-    public void setLugarNacimientoEmpleado(String lugarNacimientoEmpleado) {
-        this.lugarNacimientoEmpleado = new SimpleStringProperty(lugarNacimientoEmpleado);
-    }
-    public StringProperty LugarNacimientoEmpleadoProperty() {
-        return lugarNacimientoEmpleado;
-    }
-    //Metodos atributo: fechaNacimientoEmpleado
-    public Date getFechaNacimientoEmpleado() {
-        return fechaNacimientoEmpleado;
-    }
-    public void setFechaNacimientoEmpleado(Date fechaNacimientoEmpleado) {
-        this.fechaNacimientoEmpleado = fechaNacimientoEmpleado;
-    }
     //Metodos atributo: emailEmpleado
     public String getEmailEmpleado() {
         return emailEmpleado.get();
@@ -155,35 +207,105 @@ public class Empleado{
     public StringProperty EmailEmpleadoProperty() {
         return emailEmpleado;
     }
-    //Metodos atributo: telefonoFijoEmpleado
-    public String getTelefonoFijoEmpleado() {
-        return telefonoFijoEmpleado.get();
+    //Metodos atributo: codigoPostalEmpleado
+    public String getCodigoPostalEmpleado() {
+        return codigoPostalEmpleado.get();
     }
-    public void setTelefonoFijoEmpleado(String telefonoFijoEmpleado) {
-        this.telefonoFijoEmpleado = new SimpleStringProperty(telefonoFijoEmpleado);
+    public void setCodigoPostalEmpleado(String codigoPostalEmpleado) {
+        this.codigoPostalEmpleado = new SimpleStringProperty(codigoPostalEmpleado);
     }
-    public StringProperty TelefonoFijoEmpleadoProperty() {
-        return telefonoFijoEmpleado;
+    public StringProperty CodigoPostalEmpleadoProperty() {
+        return codigoPostalEmpleado;
     }
-    //Metodos atributo: telefonoCelularEmpleado
-    public String getTelefonoCelularEmpleado() {
-        return telefonoCelularEmpleado.get();
+    //Metodos atributo: telefonoEmpleado
+    public String getTelefonoEmpleado() {
+        return telefonoEmpleado.get();
     }
-    public void setTelefonoCelularEmpleado(String telefonoCelularEmpleado) {
-        this.telefonoCelularEmpleado = new SimpleStringProperty(telefonoCelularEmpleado);
+    public void setTelefonoEmpleado(String telefonoEmpleado) {
+        this.telefonoEmpleado = new SimpleStringProperty(telefonoEmpleado);
     }
-    public StringProperty TelefonoCelularEmpleadoProperty() {
-        return telefonoCelularEmpleado;
+    public StringProperty TelefonoEmpleadoProperty() {
+        return telefonoEmpleado;
     }
-    //Metodos atributo: direccionResidenciaEmpleado
-    public String getDireccionResidenciaEmpleado() {
-        return direccionResidenciaEmpleado.get();
+    //Metodos atributo: celularEmpleado
+    public String getCelularEmpleado() {
+        return celularEmpleado.get();
     }
-    public void setDireccionResidenciaEmpleado(String direccionResidenciaEmpleado) {
-        this.direccionResidenciaEmpleado = new SimpleStringProperty(direccionResidenciaEmpleado);
+    public void setCelularEmpleado(String celularEmpleado) {
+        this.celularEmpleado = new SimpleStringProperty(celularEmpleado);
     }
-    public StringProperty DireccionResidenciaEmpleadoProperty() {
-        return direccionResidenciaEmpleado;
+    public StringProperty CelularEmpleadoProperty() {
+        return celularEmpleado;
+    }
+    //Metodos atributo: telefonoAlternativoEmpleado
+    public String getTelefonoAlternativoEmpleado() {
+        return telefonoAlternativoEmpleado.get();
+    }
+    public void setTelefonoAlternativoEmpleado(String telefonoAlternativoEmpleado) {
+        this.telefonoAlternativoEmpleado = new SimpleStringProperty(telefonoAlternativoEmpleado);
+    }
+    public StringProperty TelefonoAlternativoEmpleadoProperty() {
+        return telefonoAlternativoEmpleado;
+    }
+    //Metodos atributo: direccionEmpleado
+    public String getDireccionEmpleado() {
+        return direccionEmpleado.get();
+    }
+    public void setDireccionEmpleado(String direccionEmpleado) {
+        this.direccionEmpleado = new SimpleStringProperty(direccionEmpleado);
+    }
+    public StringProperty DireccionEmpleadoProperty() {
+        return direccionEmpleado;
+    }
+    //Metodos atributo: barrioEmpleado
+    public String getBarrioEmpleado() {
+        return barrioEmpleado.get();
+    }
+    public void setBarrioEmpleado(String barrioEmpleado) {
+        this.barrioEmpleado = new SimpleStringProperty(barrioEmpleado);
+    }
+    public StringProperty BarrioEmpleadoProperty() {
+        return barrioEmpleado;
+    }
+    //Metodos atributo: upzEmpleado
+    public String getUpzEmpleado() {
+        return upzEmpleado.get();
+    }
+    public void setUpzEmpleado(String upzEmpleado) {
+        this.upzEmpleado = new SimpleStringProperty(upzEmpleado);
+    }
+    public StringProperty UpzEmpleadoProperty() {
+        return upzEmpleado;
+    }
+    //Metodos atributo: localidadEmpleado
+    public String getLocalidadEmpleado() {
+        return localidadEmpleado.get();
+    }
+    public void setLocalidadEmpleado(String localidadEmpleado) {
+        this.localidadEmpleado = new SimpleStringProperty(localidadEmpleado);
+    }
+    public StringProperty LocalidadEmpleadoProperty() {
+        return localidadEmpleado;
+    }
+    //Metodos atributo: municipioEmpleado
+    public String getMunicipioEmpleado() {
+        return municipioEmpleado.get();
+    }
+    public void setMunicipioEmpleado(String municipioEmpleado) {
+        this.municipioEmpleado = new SimpleStringProperty(municipioEmpleado);
+    }
+    public StringProperty MunicipioEmpleadoProperty() {
+        return municipioEmpleado;
+    }
+    //Metodos atributo: departamentoEmpleado
+    public String getDepartamentoEmpleado() {
+        return departamentoEmpleado.get();
+    }
+    public void setDepartamentoEmpleado(String departamentoEmpleado) {
+        this.departamentoEmpleado = new SimpleStringProperty(departamentoEmpleado);
+    }
+    public StringProperty DepartamentoEmpleadoProperty() {
+        return departamentoEmpleado;
     }
     //Metodos atributo: nombrePersonaContactoEmpleado
     public String getNombrePersonaContactoEmpleado() {
@@ -195,22 +317,22 @@ public class Empleado{
     public StringProperty NombrePersonaContactoEmpleadoProperty() {
         return nombrePersonaContactoEmpleado;
     }
-    //Metodos atributo: celularPersonaContactoEmpleado
-    public String getCelularPersonaContactoEmpleado() {
-        return celularPersonaContactoEmpleado.get();
+    //Metodos atributo: celualarPersonaContactoEmpleado
+    public String getCelualarPersonaContactoEmpleado() {
+        return celualarPersonaContactoEmpleado.get();
     }
-    public void setCelularPersonaContactoEmpleado(String celularPersonaContactoEmpleado) {
-        this.celularPersonaContactoEmpleado = new SimpleStringProperty(celularPersonaContactoEmpleado);
+    public void setCelualarPersonaContactoEmpleado(String celualarPersonaContactoEmpleado) {
+        this.celualarPersonaContactoEmpleado = new SimpleStringProperty(celualarPersonaContactoEmpleado);
     }
-    public StringProperty CelularPersonaContactoEmpleadoProperty() {
-        return celularPersonaContactoEmpleado;
+    public StringProperty CelualarPersonaContactoEmpleadoProperty() {
+        return celualarPersonaContactoEmpleado;
     }
-    //Metodos atributo: tipoContratoEmpleado
-    public TipoContrato getTipoContratoEmpleado() {
-        return tipoContratoEmpleado;
+    //Metodos atributo: tipoSalarioEmpleado
+    public TipoSalario getTipoSalarioEmpleado() {
+        return tipoSalarioEmpleado;
     }
-    public void setTipoContratoEmpleado(TipoContrato tipoContratoEmpleado) {
-        this.tipoContratoEmpleado = tipoContratoEmpleado;
+    public void setTipoSalarioEmpleado(TipoSalario tipoSalarioEmpleado) {
+        this.tipoSalarioEmpleado = tipoSalarioEmpleado;
     }
     //Metodos atributo: sueldoBaseEmpleado
     public int getSueldoBaseEmpleado() {
@@ -222,5 +344,113 @@ public class Empleado{
     public IntegerProperty SueldoBaseEmpleadoProperty() {
         return sueldoBaseEmpleado;
     }
-}
 
+    public static void listarEmpleados(Connection connection, ObservableList<Empleado> lista){
+        try{
+            Statement statement = connection.createStatement();
+            ResultSet resultado = statement.executeQuery("SELECT nombresempleado , apellidosempleado  FROM empleado");
+            while (resultado.next()){
+                lista.add(
+                        new Empleado(
+                                resultado.getString("nombresempleado"),
+                                resultado.getString("apellidosempleado")
+                        )
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void llenarInformacionEmpleados(Connection connection, ObservableList<Empleado> lista){
+        try{
+            Statement statement = connection.createStatement();
+            ResultSet resultado = statement.executeQuery("SELECT " +
+                    "A.idempleado, " +
+                    "A.rolid, " +
+                    "A.fechaingresoempleado, " +
+                    "A.nacionalidadempleado, " +
+                    "A.empleadoesusuariosistema, " +
+                    "A.documentoid, " +
+                    "A.numerodocumentoidentidadempleado, " +
+                    "A.lugarexpediciondocumentoidentiadempleado, " +
+                    "A.fechaexpediciondocumentoidentiadempleado," +
+                    "A.lugarnacimientoempleado, " +
+                    "A.fechanacimientoempleado, " +
+                    "A.nombresempleado, " +
+                    "A.apellidosempleado, " +
+                    "A.emailempleado, " +
+                    "A.codigopostalempleado, " +
+                    "A.telefonoempleado, " +
+                    "A.celularempleado, " +
+                    "A.telefonoalternativoempleado, " +
+                    "A.direccionempleado, " +
+                    "A.departamentoempleado, " +
+                    "A.municipioempleado, " +
+                    "A.localidadempleado, " +
+                    "A.upzempleado, " +
+                    "A.barrioempleado, " +
+                    "A.nombrepersonacontactoempleado, " +
+                    "A.celualarpersonacontactoempleado, " +
+                    "A.tipocontratoempleado, " +
+                    "A.sueldobaseempleado, " +
+                    "rol.nombrerol, " +
+                    "documentoidentidad.nombredocumentoidentidad, " +
+                    "tipocontrato.nombretipocontrato " +
+                    "FROM empleado A " +
+                    "INNER JOIN rol " +
+                    "ON(A.rolid = rol.idrol) " +
+                    "INNER JOIN documentoidentidad " +
+                    "ON(A.documentoid = documentoidentidad.iddocumentoidentidad) " +
+                    "INNER JOIN tipocontrato " +
+                    "ON(A.tipocontratoempleado = tipocontrato.idtipocontrato);");
+            while (resultado.next()){
+                lista.add(
+                        new Empleado(
+                                resultado.getInt("idempleado"),
+                                new Rol(resultado.getInt("rolid"),resultado.getString("nombrerol")),
+                                resultado.getDate("fechaingresoempleado"),
+                                resultado.getString("nacionalidadempleado"),
+                                resultado.getBoolean("empleadoesusuariosistema"),
+                                new TipoDocumentoIdentidad(
+                                        resultado.getInt("documentoid"),
+                                        resultado.getString("nombredocumentoidentidad")
+                                ),
+                                resultado.getString("numerodocumentoidentidadempleado"),
+                                resultado.getString("lugarexpediciondocumentoidentiadempleado"),
+                                resultado.getDate("fechaexpediciondocumentoidentiadempleado"),
+                                resultado.getString("lugarnacimientoempleado"),
+                                resultado.getDate("fechanacimientoempleado"),
+                                resultado.getString("nombresempleado"),
+                                resultado.getString("apellidosempleado"),
+                                resultado.getString("emailempleado"),
+                                resultado.getString("codigopostalempleado"),
+                                resultado.getString("telefonoempleado"),
+                                resultado.getString("celularempleado"),
+                                resultado.getString("telefonoalternativoempleado"),
+                                resultado.getString("direccionempleado"),
+                                resultado.getString("barrioempleado"),
+                                resultado.getString("upzempleado"),
+                                resultado.getString("localidadempleado"),
+                                resultado.getString("municipioempleado"),
+                                resultado.getString("departamentoempleado"),
+                                resultado.getString("nombrepersonacontactoempleado"),
+                                resultado.getString("celualarpersonacontactoempleado"),
+                                new TipoSalario(
+                                        resultado.getInt("tipocontratoempleado"),
+                                        resultado.getString("nombretipocontrato")
+                                ),
+                                resultado.getInt("sueldobaseempleado")
+                        )
+                                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public String toString(){
+        return nombresEmpleado.get()+" "+apellidosEmpleado.get();
+    }
+}

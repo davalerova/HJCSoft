@@ -21,7 +21,7 @@ public class Usuario{
         this.esActivoUsuario = new SimpleBooleanProperty(esActivoUsuario);
     }
 
-    //Metodos atributo: idUsuario
+    //Métodos atributo: idUsuario
     public int getIdUsuario() {
         return idUsuario.get();
     }
@@ -31,21 +31,21 @@ public class Usuario{
     public IntegerProperty IdUsuarioProperty() {
         return idUsuario;
     }
-    //Metodos atributo: idEmpleadoUsuario
+    //Métodos atributo: idEmpleadoUsuario
     public Empleado getIdEmpleadoUsuario() {
         return idEmpleadoUsuario;
     }
     public void setIdEmpleadoUsuario(Empleado idEmpleadoUsuario) {
         this.idEmpleadoUsuario = idEmpleadoUsuario;
     }
-    //Metodos atributo: idRolUsuario
+    //Métodos atributo: idRolUsuario
     public Rol getIdRolUsuario() {
         return idRolUsuario;
     }
     public void setIdRolUsuario(Rol idRolUsuario) {
         this.idRolUsuario = idRolUsuario;
     }
-    //Metodos atributo: nombreUsuario
+    //Métodos atributo: nombreUsuario
     public String getNombreUsuario() {
         return nombreUsuario.get();
     }
@@ -55,7 +55,7 @@ public class Usuario{
     public StringProperty NombreUsuarioProperty() {
         return nombreUsuario;
     }
-    //Metodos atributo: contrasenaUsuario
+    //Métodos atributo: contrasenaUsuario
     public String getContrasenaUsuario() {
         return contrasenaUsuario.get();
     }
@@ -65,7 +65,7 @@ public class Usuario{
     public StringProperty ContrasenaUsuarioProperty() {
         return contrasenaUsuario;
     }
-    //Metodos atributo: esActivoUsuario
+    //Métodos atributo: esActivoUsuario
     public Boolean getEsActivoUsuario() {
         return esActivoUsuario.get();
     }
@@ -75,4 +75,6 @@ public class Usuario{
     public BooleanProperty EsActivoUsuarioProperty() {
         return esActivoUsuario;
     }
+
+
 }

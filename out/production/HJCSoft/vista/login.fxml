@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -58,6 +59,9 @@
             </Label>
          </children>
       </GridPane>
-      <ImageView fx:id="logo" fitHeight="93.0" fitWidth="346.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="logo" fitHeight="93.0" fitWidth="346.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/LogoHJC.png" />
+         </image></ImageView>
    </children>
 </Pane>

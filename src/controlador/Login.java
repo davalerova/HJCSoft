@@ -9,11 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import modelo.Cliente;
-import modelo.ProcesoInformacionCliente;
+import modelo.ProcesoInformacionUsuario;
 import vista.Vistas;
 import java.io.IOException;
 import java.net.URL;
@@ -23,7 +22,7 @@ import java.util.Scanner;
 public class Login implements Initializable {
     private Scanner input;
     private Cliente cliente;
-    private ProcesoInformacionCliente procesoCliente;
+    private ProcesoInformacionUsuario procesoUsuario;
     private Sesion sesion;
     private Captcha cp;
     private boolean robot;
@@ -32,7 +31,6 @@ public class Login implements Initializable {
 
     @FXML
     private ImageView logo;
-
     @FXML
     private TextField usuarioIn;
     @FXML
@@ -59,11 +57,11 @@ public class Login implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.input=new Scanner(System.in);
-        this.procesoCliente=new ProcesoInformacionCliente();
+        this.procesoUsuario=new ProcesoInformacionUsuario();
         this.cliente=new Cliente();
-        this.robot=false;
+        this.robot=false;/*
         Image image = new Image("recursos/LogoHJC.png");
-        logo.setImage(image);
+        logo.setImage(image);*/
         System.out.println("Hola javafx");
 
     }
@@ -74,7 +72,7 @@ public class Login implements Initializable {
         int captcha = Integer.parseInt(captchaIn.getText());
         sesion.setUsuario(usuarioIn.getText());
         sesion.setContrasena(claveIn.getText());
-        if(procesoCliente.validarUsuario(sesion).equals(sesion.getUsuario())&&!(sesion.getUsuario().length()==0||sesion.getContrasena().length()==0)&&captcha==cp.getSum()&&robot){
+        if(procesoUsuario.validarUsuario(sesion).equals(sesion.getUsuario())&&!(sesion.getUsuario().length()==0||sesion.getContrasena().length()==0)&&captcha==cp.getSum()&&robot){
             Vistas vista=new Vistas();
             FXMLLoader princi=vista.vista("Principal");
             Principal princ=new Principal();
@@ -96,7 +94,7 @@ public class Login implements Initializable {
         else{
             //salida.setText("Contraseña o usuario incorrecto, intente de nuevo");
             //captchaout.setText("");
-            procesoCliente.registrarLoginFallido(sesion);
+            //procesoUsuario.registrarLoginFallido(sesion);
             robot=false;
             //return false;
         }

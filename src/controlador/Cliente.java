@@ -215,4 +215,7 @@ public class Cliente{
     public void setRemitidoPor(Cliente remitidoPor) {
         this.remitidoPor = remitidoPor;
     }
+    public void llenarInformacion(){
+
+    }
 }
