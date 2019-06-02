@@ -1,15 +1,16 @@
-package modelo;
+package controlador;
 
-public class Login {
+
+public class Sesion {
     public String usuario;
     public String contrasena;
 
-    public Login(String usuario, String contrasena) {
+    public Sesion(String usuario, String contrasena) {
         this.usuario = usuario;
         this.contrasena = contrasena;
     }
 
-    public Login() {
+    public Sesion() {
         this.usuario=null;
         this.contrasena=null;
     }

@@ -9,15 +9,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import controlador.Sesion;
 
-public class ProcesoInformacionCliente {
+public class ProcesoInformacionUsuario {
 
     private DbConnection conexion;
 
-    public ProcesoInformacionCliente() {
+    public ProcesoInformacionUsuario() {
         this.conexion = new DbConnection();
     }
 
-    public void listarCliente() {
+    public void listarUsuario() {
         String strConsulta = "SELECT*FROM cliente";
         int registros = 0;
         try {
@@ -49,7 +49,7 @@ public class ProcesoInformacionCliente {
         }
     }
 
-    public void registrarCliente(Cliente unCliente) {
+    public void registrarUsuario(Cliente unCliente) {
         String codigo = unCliente.getCodigo();
         String nombre = unCliente.getNombre();
         String apellido = unCliente.getApellido();
@@ -73,7 +73,7 @@ public class ProcesoInformacionCliente {
         }
     }
 
-    public void consultarCliente(String codigoCliente) {
+    public void consultarUsuario(String codigoCliente) {
         String codigo = codigoCliente;
         String nombre = "";
         String apellido = "";
@@ -103,7 +103,7 @@ public class ProcesoInformacionCliente {
         }
     }
 
-    public void actualizarDatosCliente(String codigo, String nombre, String apellido, String telefono, String correo) {
+    public void actualizarDatosUsuario(String codigo, String nombre, String apellido, String telefono, String correo) {
         String actualizaSql = "UPDATE cliente SET nombrecli=?,apellidocli=?,telefonocli=?,correocli=? WHERE codigocli=?";
         try {
             PreparedStatement inst = conexion.getConnection().prepareStatement(actualizaSql);
@@ -120,7 +120,7 @@ public class ProcesoInformacionCliente {
         }
     }
 
-    public void borrarDatosCliente(String codigoCliente) {
+    public void borrarDatosUsuario(String codigoCliente) {
         String codigo = codigoCliente;
         String borraSql = "DELETE FROM cliente WHERE codigocli=?";
         try {
@@ -138,14 +138,14 @@ public class ProcesoInformacionCliente {
     public String validarUsuario(Sesion sesion) {
         String usuario = "";
         String contrasena = sesion.getContrasena();
-        String consultaSql = "SELECT*FROM usuario WHERE passwordusu=md5(?)";
+        String consultaSql = "SELECT*FROM usuario WHERE claveusuario=md5(?)";
         try {
             PreparedStatement inst = conexion.getConnection().prepareStatement(consultaSql);
             inst.setString(1, contrasena);
             ResultSet rs = inst.executeQuery();
 
             while (rs.next() == true) {
-                usuario = rs.getString(4);
+                usuario = rs.getString(3);
             }
 
         } catch (SQLException e) {
@@ -188,7 +188,7 @@ public class ProcesoInformacionCliente {
         String correo = unUsuario.getCorreo();
         String usuario = unUsuario.getUsuario();
         String clave = unUsuario.getClave();
-        String registroCliente = "INSERT INTO usuario(nombreusu,apellidousu,correousu,loginusu,passwordusu) VALUES(?,?,?,?,md5(?))";
+        String registroCliente = "INSERT INTO usuario(idusuario, empleadoid, nombreusuario, claveusuario, esactivo) VALUES(?,?,?,?,md5(?))";
 
         try {
             PreparedStatement inst

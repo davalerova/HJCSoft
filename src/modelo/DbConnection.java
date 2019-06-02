@@ -13,29 +13,29 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-     public class DbConnection {
+public class DbConnection {
 
-         private String bd = "empresa";
-         private String password = "postgresqldvd";
-         private String url = "jdbc:postgresql://localhost:5432/" + bd;
-         Connection conn = null;
+    private String bd = "HJCSoftDB";
+    private String password = "postgresqldvd";
+    private String url = "jdbc:postgresql://localhost:5432/" + bd;
+    Connection conn = null;
 
-         public DbConnection() {
-             try {
-                 Class.forName("org.postgresql.Driver");
-                 this.conn = DriverManager.getConnection(url, "postgres", password);
-             } catch (SQLException e) {
-                 System.out.println(e);
-             } catch (ClassNotFoundException e) {
-                 System.out.println(e);
-             }
-         }
+    public DbConnection() {
+        try {
+            Class.forName("org.postgresql.Driver");
+            this.conn = DriverManager.getConnection(url, "postgres", password);
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (ClassNotFoundException e) {
+            System.out.println(e);
+        }
+    }
 
-         public Connection getConnection() {
-             return conn;
-         }
+    public Connection getConnection() {
+        return conn;
+    }
 
-         public void desconectar() {
-             this.conn = null;
-         }
-     }
+    public void desconectar() {
+        this.conn = null;
+    }
+}

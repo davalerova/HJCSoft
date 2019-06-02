@@ -7,18 +7,20 @@ package modelo;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import modelo.Cliente;
 import controlador.Sesion;
 
-public class ProcesoInformacionCliente {
+public class ProcesoInformacionEmpleado {
 
     private DbConnection conexion;
 
-    public ProcesoInformacionCliente() {
+    public ProcesoInformacionEmpleado() {
         this.conexion = new DbConnection();
     }
 
     public void listarCliente() {
-        String strConsulta = "SELECT*FROM cliente";
+        String strConsulta = "SELECT*FROM empleado";
         int registros = 0;
         try {
             PreparedStatement pstm
@@ -221,5 +223,8 @@ public class ProcesoInformacionCliente {
         } catch (Exception ex) {
             System.out.println(ex.toString());
         }
+    }
+    public void llenarInformacionEmpleado(){
+
     }
 }
