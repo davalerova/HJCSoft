@@ -85,6 +85,11 @@ public class Login implements Initializable {
                 princ.setPrincipal(pricipal);
                 pricipal.show();
                 getLogin().hide();
+                Alert mensaje=new Alert(Alert.AlertType.INFORMATION);
+                mensaje.setTitle("HJCSoft");
+                mensaje.setContentText("Ha iniciado sesión correctamente");
+                mensaje.setHeaderText("Bienvenido "+sesion.getUsuario());
+                mensaje.show();
             }catch (IOException e){
                 e.printStackTrace();
             }

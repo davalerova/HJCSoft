@@ -478,7 +478,7 @@ public class Principal implements Initializable {
         tfNombrePersonaContactoEmpleado.setText(null);
         tfNombreTelefonoPersonaContactoEmpleado.setText(null);
         cmbTipoContrato.setValue(null);
-        tfSueldoBaseEmpleado.setText(null);
+        tfSueldoBaseEmpleado.setText("0");
         btnAdministrarGuardar.setDisable(true);
         btnAdministrarActualizar.setDisable(true);
         btnAdministrarEliminar.setDisable(true);
@@ -570,7 +570,7 @@ public class Principal implements Initializable {
         }else if("admin".equals(u.getNombreUsuario())){
             Alert mensaje = new Alert(Alert.AlertType.INFORMATION);
             mensaje.setTitle("No se puede borrar el usuaro: "+"admin");
-            mensaje.setContentText("El usuario admin tiene privilegios de superadministrador.\n"+nombreUsuarioSesion+" no tiene el nivel de acceso correspodiente.");
+            mensaje.setContentText("El usuario admin tiene privilegios de superadministrador.\nEl usuario "+nombreUsuarioSesion+" no tiene el nivel de acceso correspodiente.");
             mensaje.setHeaderText("Motivo:");
             mensaje.show();
         }else{

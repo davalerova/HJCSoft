@@ -160,11 +160,11 @@
                                                                         <TableView prefHeight="551.0" prefWidth="892.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                            <columns>
                                                                               <TableColumn prefWidth="29.0" text="Id" />
-                                                                              <TableColumn prefWidth="243.0" text="Nombre" />
-                                                                              <TableColumn prefWidth="85.0" text="Fecha ingreso" />
-                                                                              <TableColumn prefWidth="112.0" text="Fecha nacimiento" />
-                                                                              <TableColumn prefWidth="119.0" text="Celular" />
-                                                                              <TableColumn prefWidth="256.0" text="Correo" />
+                                                                              <TableColumn prefWidth="171.00003051757812" text="Nombres" />
+                                                                              <TableColumn prefWidth="139.0" text="Apellidos" />
+                                                                              <TableColumn prefWidth="130.0" text="Celular" />
+                                                                              <TableColumn prefWidth="207.0" text="Dirección" />
+                                                                              <TableColumn prefWidth="168.0" text="Correo" />
                                                                            </columns>
                                                                         </TableView>
                                                                      </children>
@@ -280,11 +280,11 @@
                                                                         <TableView prefHeight="551.0" prefWidth="892.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                            <columns>
                                                                               <TableColumn prefWidth="29.0" text="Id" />
-                                                                              <TableColumn prefWidth="229.00003051757812" text="Nombre" />
-                                                                              <TableColumn prefWidth="126.0" text="Fecha último ingreso" />
-                                                                              <TableColumn prefWidth="129.0" text="Hora último ingreso" />
-                                                                              <TableColumn prefWidth="124.0" text="N° conexiones" />
-                                                                              <TableColumn prefWidth="208.0" text="Correo" />
+                                                                              <TableColumn prefWidth="158.00003051757812" text="Modelo" />
+                                                                              <TableColumn prefWidth="198.0" text="Descripción" />
+                                                                              <TableColumn prefWidth="129.0" text="Serie" />
+                                                                              <TableColumn prefWidth="113.0" text="Fecha de compra" />
+                                                                              <TableColumn prefWidth="219.0001220703125" text="Tipo de garantía" />
                                                                            </columns>
                                                                         </TableView>
                                                                      </children>
@@ -467,11 +467,11 @@
                                                                         <TableView prefHeight="551.0" prefWidth="892.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                            <columns>
                                                                               <TableColumn prefWidth="29.0" text="Id" />
-                                                                              <TableColumn prefWidth="229.00003051757812" text="Nombre" />
-                                                                              <TableColumn prefWidth="126.0" text="Fecha último ingreso" />
-                                                                              <TableColumn prefWidth="129.0" text="Hora último ingreso" />
-                                                                              <TableColumn prefWidth="124.0" text="N° conexiones" />
-                                                                              <TableColumn prefWidth="208.0" text="Correo" />
+                                                                              <TableColumn prefWidth="83.00003051757812" text="Folio" />
+                                                                              <TableColumn prefWidth="120.0" text="Fecha ingreso" />
+                                                                              <TableColumn prefWidth="142.0" text="Estado" />
+                                                                              <TableColumn prefWidth="264.0" text="Condición" />
+                                                                              <TableColumn prefWidth="208.0" text="Código cliente" />
                                                                            </columns>
                                                                         </TableView>
                                                                      </children>
@@ -618,11 +618,11 @@
                                                                         <TableView prefHeight="551.0" prefWidth="892.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                            <columns>
                                                                               <TableColumn prefWidth="29.0" text="Id" />
-                                                                              <TableColumn prefWidth="243.0" text="Nombre" />
-                                                                              <TableColumn prefWidth="85.0" text="Fecha ingreso" />
-                                                                              <TableColumn prefWidth="112.0" text="Fecha nacimiento" />
-                                                                              <TableColumn prefWidth="119.0" text="Celular" />
-                                                                              <TableColumn prefWidth="256.0" text="Correo" />
+                                                                              <TableColumn prefWidth="71.00003051757812" text="Folio" />
+                                                                              <TableColumn prefWidth="200.0" text="Técnico" />
+                                                                              <TableColumn prefWidth="110.0" text="Fecha asignación" />
+                                                                              <TableColumn prefWidth="117.0" text="Fecha compromiso" />
+                                                                              <TableColumn prefWidth="318.0" text="Observaciones" />
                                                                            </columns>
                                                                         </TableView>
                                                                      </children>
@@ -899,7 +899,7 @@
                                                                                                 <Insets left="5.0" />
                                                                                              </padding>
                                                                                           </Label>
-                                                                                          <TextField fx:id="tfSueldoBaseEmpleado" prefHeight="25.0" prefWidth="80.0" />
+                                                                                          <TextField fx:id="tfSueldoBaseEmpleado" prefHeight="25.0" prefWidth="80.0" text="0" />
                                                                                        </children>
                                                                                     </HBox>
                                                                                     <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="15">

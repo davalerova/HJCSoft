@@ -55,7 +55,7 @@
                   </Button>
                </children>
             </HBox>
-            <TextField fx:id="captchaOut" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="captchaOut" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="captchaIn" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Button fx:id="ingresar" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="25.0" prefWidth="184.0" text="Ingresar" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Ingresar solución:" GridPane.rowIndex="3">
