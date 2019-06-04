@@ -18,7 +18,7 @@ public class Index extends Application {
         Parent root=(Parent)fxml.load();
         Scene scena=new Scene(root);
         primaryStage.setScene(scena);
-        primaryStage.setTitle("HJCSoft");
+        primaryStage.setTitle("HJCSoft - Inicio de sesión");
         logi.setLogin(primaryStage);
         primaryStage.show();
     }

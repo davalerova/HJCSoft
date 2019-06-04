@@ -156,7 +156,7 @@ public class ProcesoInformacionCliente {
         return usuario;
     }
 
-    public boolean usuarioExiste(Usuario unUsuario) {
+    /*public boolean usuarioExiste(Usuario unUsuario) {
         String usuario = unUsuario.getUsuario();
         String consultaSql = "SELECT*FROM usuario WHERE loginusu=?";
         try {
@@ -221,5 +221,5 @@ public class ProcesoInformacionCliente {
         } catch (Exception ex) {
             System.out.println(ex.toString());
         }
-    }
+    }*/
 }

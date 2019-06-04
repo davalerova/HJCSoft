@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -73,6 +74,7 @@ public class Login implements Initializable {
         sesion.setUsuario(usuarioIn.getText());
         sesion.setContrasena(claveIn.getText());
         if(procesoUsuario.validarUsuario(sesion).equals(sesion.getUsuario())&&!(sesion.getUsuario().length()==0||sesion.getContrasena().length()==0)&&captcha==cp.getSum()&&robot){
+            Principal.nombreUsuarioSesion=sesion.getUsuario();
             Vistas vista=new Vistas();
             FXMLLoader princi=vista.vista("Principal");
             Principal princ=new Principal();
@@ -92,7 +94,12 @@ public class Login implements Initializable {
 
         }
         else{
-            //salida.setText("Contraseña o usuario incorrecto, intente de nuevo");
+            Alert mensaje = new Alert(Alert.AlertType.INFORMATION);
+            mensaje.setTitle("No se puede iniciar sesión");
+            mensaje.setContentText("Contraseña o usuario incorrecto, intente de nuevo.\nVerifique que no es un robot.");
+            mensaje.setHeaderText("Motivo:");
+            mensaje.show();
+            //salida.setText("");
             //captchaout.setText("");
             //procesoUsuario.registrarLoginFallido(sesion);
             robot=false;
