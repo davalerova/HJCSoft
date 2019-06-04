@@ -31,6 +31,7 @@ import java.util.ResourceBundle;
 
 public class Principal implements Initializable {
     ProcesoInformacionUsuario procesoUsuario;
+    ProcesoInformacionEmpleado procesoEmpleado;
 
     Stage principal;
     Vistas vista = new Vistas();
@@ -56,6 +57,9 @@ public class Principal implements Initializable {
 
     @FXML
     private Label lbCsa;
+
+    @FXML
+    private TextField tfIdEmpleado;
 
     @FXML
     private ComboBox<Rol> cmbRol;
@@ -214,7 +218,7 @@ public class Principal implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         procesoUsuario = new ProcesoInformacionUsuario();
-        ProcesoInformacionEmpleado procesoEmpleado = new ProcesoInformacionEmpleado();
+        procesoEmpleado = new ProcesoInformacionEmpleado();
         txtUsuario.setText(nombreUsuarioSesion);
         conexion = new DbConnection();
         conexion.getConnection();
@@ -265,43 +269,48 @@ public class Principal implements Initializable {
                 new ChangeListener<Empleado>() {
                     @Override
                     public void changed(ObservableValue<? extends Empleado> observable, Empleado valorAnterior, Empleado valorSeleccionado) {
-                        cmbRol.setValue(valorSeleccionado.getRolIdEmpleado());
-                        dtpFechaIngresoEmpleado.setValue(valorSeleccionado.getFechaIngresoEmpleado().toLocalDate());
-                        tfNacionalidadEmpleado.setText(valorSeleccionado.getNacionalidadEmpleado());
-                        if(valorSeleccionado.getEmpleadoEsUsuarioSistema()){
-                            rbEmpleadoEsUsuarioDelSistema.setSelected(true);
-                            rbEmpleadoNoEsUsuarioDelSistema.setSelected(false);
-                        }else{
+                        if(valorSeleccionado!=null) {
+                            cmbRol.setValue(valorSeleccionado.getRolIdEmpleado());
+                            dtpFechaIngresoEmpleado.setValue(valorSeleccionado.getFechaIngresoEmpleado().toLocalDate());
+                            tfNacionalidadEmpleado.setText(valorSeleccionado.getNacionalidadEmpleado());
+                            if (valorSeleccionado.getEmpleadoEsUsuarioSistema()) {
+                                rbEmpleadoEsUsuarioDelSistema.setSelected(true);
+                                rbEmpleadoNoEsUsuarioDelSistema.setSelected(false);
+                            } else {
 
-                            rbEmpleadoEsUsuarioDelSistema.setSelected(false);
-                            rbEmpleadoNoEsUsuarioDelSistema.setSelected(true);
+                                rbEmpleadoEsUsuarioDelSistema.setSelected(false);
+                                rbEmpleadoNoEsUsuarioDelSistema.setSelected(true);
+                            }
+                            tfIdEmpleado.setText(String.valueOf(valorSeleccionado.getIdEmpleado()));
+                            cmbTipoDocumentoIdentidad.setValue(valorSeleccionado.getTipoDocumentoIdEmpleado());
+                            tfNumeroDocumentoEmpleado.setText(valorSeleccionado.getNumeroDocumentoIdentidadEmpleado());
+                            tfLugarExpedicionDocumentoEmpleado.setText(valorSeleccionado.getLugarExpediciónDocumentoIdentiadEmpleado());
+                            dtpFechaExpedicionDocumentoEmpleado.setValue(valorSeleccionado.getFechaExpedicionDocumentoIdentiadEmpleado().toLocalDate());
+                            tfLugarNacimientoEmpleado.setText(valorSeleccionado.getLugarNacimientoEmpleado());
+                            dtpFechaNacimientoEmpleado.setValue(valorSeleccionado.getFechaNacimientoEmpleado().toLocalDate());
+                            tfNombresEmpleado.setText(valorSeleccionado.getNombresEmpleado());
+                            tfApellidosEmpleado.setText(valorSeleccionado.getApellidosEmpleado());
+                            tfCorreoEmpleado.setText(valorSeleccionado.getEmailEmpleado());
+                            tfCodigoPostalEmpleado.setText(valorSeleccionado.getCodigoPostalEmpleado());
+                            tfTelefonoFijoEmpleado.setText(valorSeleccionado.getTelefonoEmpleado());
+                            tfTelefonoCelularEmpleado.setText(valorSeleccionado.getCelularEmpleado());
+                            tfTelefonoAlternativoEmpleado.setText(valorSeleccionado.getTelefonoAlternativoEmpleado());
+                            tfDireccionEmpleado.setText(valorSeleccionado.getDireccionEmpleado());
+                            tfDepartamentoEmpleado.setText(valorSeleccionado.getDepartamentoEmpleado());
+                            tfUpzEmpleado.setText(valorSeleccionado.getUpzEmpleado());
+                            tfMunicipioEmpleado.setText(valorSeleccionado.getMunicipioEmpleado());
+                            tfLocalidadEmpleado.setText(valorSeleccionado.getLocalidadEmpleado());
+                            tfNombrePersonaContactoEmpleado.setText(valorSeleccionado.getNombrePersonaContactoEmpleado());
+                            tfNombreTelefonoPersonaContactoEmpleado.setText(valorSeleccionado.getCelualarPersonaContactoEmpleado());
+                            cmbTipoContrato.setValue(valorSeleccionado.getTipoSalarioEmpleado());
+                            tfSueldoBaseEmpleado.setText(String.valueOf(valorSeleccionado.getSueldoBaseEmpleado()));
+                            btnAdministrarGuardar.setDisable(true);
+                            btnAdministrarActualizar.setDisable(false);
+                            btnAdministrarEliminar.setDisable(false);
+                            btnAdministrarNuevo.setDisable(false);
+                            tfIdEmpleado.setDisable(false);
+                            tfIdEmpleado.cancelEdit();
                         }
-                        cmbTipoDocumentoIdentidad.setValue(valorSeleccionado.getTipoDocumentoIdEmpleado());
-                        tfNumeroDocumentoEmpleado.setText(valorSeleccionado.getNumeroDocumentoIdentidadEmpleado());
-                        tfLugarExpedicionDocumentoEmpleado.setText(valorSeleccionado.getLugarExpediciónDocumentoIdentiadEmpleado());
-                        dtpFechaExpedicionDocumentoEmpleado.setValue(valorSeleccionado.getFechaExpedicionDocumentoIdentiadEmpleado().toLocalDate());
-                        tfLugarNacimientoEmpleado.setText(valorSeleccionado.getLugarNacimientoEmpleado());
-                        dtpFechaNacimientoEmpleado.setValue(valorSeleccionado.getFechaNacimientoEmpleado().toLocalDate());
-                        tfNombresEmpleado.setText(valorSeleccionado.getNombresEmpleado());
-                        tfApellidosEmpleado.setText(valorSeleccionado.getApellidosEmpleado());
-                        tfCorreoEmpleado.setText(valorSeleccionado.getEmailEmpleado());
-                        tfCodigoPostalEmpleado.setText(valorSeleccionado.getCodigoPostalEmpleado());
-                        tfTelefonoFijoEmpleado.setText(valorSeleccionado.getTelefonoEmpleado());
-                        tfTelefonoCelularEmpleado.setText(valorSeleccionado.getCelularEmpleado());
-                        tfTelefonoAlternativoEmpleado.setText(valorSeleccionado.getTelefonoAlternativoEmpleado());
-                        tfDireccionEmpleado.setText(valorSeleccionado.getDireccionEmpleado());
-                        tfDepartamentoEmpleado.setText(valorSeleccionado.getDepartamentoEmpleado());
-                        tfUpzEmpleado.setText(valorSeleccionado.getUpzEmpleado());
-                        tfMunicipioEmpleado.setText(valorSeleccionado.getMunicipioEmpleado());
-                        tfLocalidadEmpleado.setText(valorSeleccionado.getLocalidadEmpleado());
-                        tfNombrePersonaContactoEmpleado.setText(valorSeleccionado.getNombrePersonaContactoEmpleado());
-                        tfNombreTelefonoPersonaContactoEmpleado.setText(valorSeleccionado.getCelualarPersonaContactoEmpleado());
-                        cmbTipoContrato.setValue(valorSeleccionado.getTipoSalarioEmpleado());
-                        tfSueldoBaseEmpleado.setText(String.valueOf(valorSeleccionado.getSueldoBaseEmpleado()));
-                        btnAdministrarGuardar.setDisable(true);
-                        btnAdministrarActualizar.setDisable(false);
-                        btnAdministrarEliminar.setDisable(false);
-                        btnAdministrarNuevo.setDisable(false);
                     }
                 }
         );
@@ -364,6 +373,7 @@ public class Principal implements Initializable {
 
     @FXML
     public void limpiarInformacionEmpleado(){
+        tfIdEmpleado.setText(null);
         cmbRol.setValue(null);
         dtpFechaIngresoEmpleado.setValue(null);
         tfNacionalidadEmpleado.setText(null);
@@ -394,6 +404,7 @@ public class Principal implements Initializable {
         btnAdministrarGuardar.setDisable(false);
         btnAdministrarActualizar.setDisable(true);
         btnAdministrarEliminar.setDisable(true);
+        tfIdEmpleado.setDisable(true);
     }
 
 
@@ -450,7 +461,7 @@ public class Principal implements Initializable {
     }
 
     private void actualizarEmpleado() {
-
+        System.out.println(Date.valueOf(dtpFechaIngresoEmpleado.getValue()));
     }
 
     @FXML
@@ -519,7 +530,6 @@ public class Principal implements Initializable {
     }
 
     public void guardarEmpleado(){
-        System.out.println("Se almacena un empleado");
 
         Empleado e = new Empleado(
                 0,
@@ -549,18 +559,21 @@ public class Principal implements Initializable {
                 tfNombrePersonaContactoEmpleado.getText(),
                 tfNombreTelefonoPersonaContactoEmpleado.getText(),
                 cmbTipoContrato.getSelectionModel().getSelectedItem(),
-                Integer.parseInt(tfSueldoBaseEmpleado.getText())
+                Integer.valueOf(tfSueldoBaseEmpleado.getText())
         );
-        conexion.getConnection();
-        int resultado=e.registrarEmpleado(conexion.getConnection());
-        conexion.desconectar();
+        int resultado= procesoEmpleado.registrarEmpleado(e);
         if(resultado==1){
+            listaInformacionEmpleados = FXCollections.observableArrayList();
+            conexion = new DbConnection();
+            conexion.getConnection();
+            Empleado.llenarInformacionEmpleados(conexion.getConnection(), listaInformacionEmpleados);
+            conexion.desconectar();
+            tblvempleado.setItems(listaInformacionEmpleados);
             Alert mensaje=new Alert(Alert.AlertType.INFORMATION);
             mensaje.setTitle("Registro agregado");
-            mensaje.setContentText("El registro ha sido agregado exitosamente");
+            mensaje.setContentText("El empleado ha sido agregado exitosamente");
             mensaje.setHeaderText("Resultado:");
             mensaje.show();
-            listaInformacionEmpleados.add(e);
         }
     }
     public void guardarUsuario(){
@@ -573,7 +586,6 @@ public class Principal implements Initializable {
         );
         int resultado = procesoUsuario.registrarUsuario(u);
         if(resultado==1){
-            //listaInformacionUsuarios.add(u);
             listaInformacionUsuarios = FXCollections.observableArrayList();
             conexion = new DbConnection();
             conexion.getConnection();

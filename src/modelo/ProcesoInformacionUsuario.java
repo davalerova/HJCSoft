@@ -55,11 +55,10 @@ public class ProcesoInformacionUsuario {
         String nombre = unUsuario.getNombreUsuario();
         String clave = unUsuario.getContrasenaUsuario();
         boolean accesoAlSistema = unUsuario.getEsActivoUsuario();
-        String registroCliente = "INSERT INTO usuario(empleadoid,nombreusuario,claveusuario,esactivo) VALUES ( ?, ?, md5(?), ?);";
+        String registroUsuario = "INSERT INTO usuario(empleadoid,nombreusuario,claveusuario,esactivo) VALUES ( ?, ?, md5(?), ?);";
 
         try {
-            PreparedStatement inst
-                    = conexion.getConnection().prepareStatement(registroCliente);
+            PreparedStatement inst = conexion.getConnection().prepareStatement(registroUsuario);
             inst.setInt(1, idEmple);
             inst.setString(2, nombre);
             inst.setString(3, clave);

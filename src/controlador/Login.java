@@ -60,10 +60,7 @@ public class Login implements Initializable {
         this.input=new Scanner(System.in);
         this.procesoUsuario=new ProcesoInformacionUsuario();
         this.cliente=new Cliente();
-        this.robot=false;/*
-        Image image = new Image("recursos/LogoHJC.png");
-        logo.setImage(image);*/
-        System.out.println("Hola javafx");
+        this.robot=false;
 
     }
 

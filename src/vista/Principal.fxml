@@ -722,11 +722,16 @@
                                                                                  <children>
                                                                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                                                                        <children>
-                                                                                          <Label text="Rol:" />
-                                                                                          <ComboBox fx:id="cmbRol" prefWidth="175.0" />
-                                                                                          <Label text="Fecha de ingreso:">
+                                                                                          <Label text="Id:" />
+                                                                                          <TextField fx:id="tfIdEmpleado" disable="true" prefHeight="25.0" prefWidth="26.0" />
+                                                                                          <Label text="Rol:">
                                                                                              <padding>
-                                                                                                <Insets left="32.0" />
+                                                                                                <Insets left="5.0" />
+                                                                                             </padding></Label>
+                                                                                          <ComboBox fx:id="cmbRol" prefHeight="25.0" prefWidth="175.0" />
+                                                                                          <Label text="Fecha ingreso:">
+                                                                                             <padding>
+                                                                                                <Insets left="5.0" />
                                                                                              </padding>
                                                                                           </Label>
                                                                                           <DatePicker fx:id="dtpFechaIngresoEmpleado" prefHeight="25.0" prefWidth="101.0" />
