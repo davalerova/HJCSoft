@@ -84,6 +84,10 @@ public class Empleado {
         this.apellidosEmpleado = new SimpleStringProperty(apellidosEmpleado);
     }
 
+    public Empleado(int idEmpleado) {
+        this.idEmpleado = new SimpleIntegerProperty(idEmpleado);
+    }
+
     //Metodos atributo: idEmpleado
     public int getIdEmpleado() {
         return idEmpleado.get();

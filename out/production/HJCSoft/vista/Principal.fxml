@@ -1098,7 +1098,7 @@
                                              <children>
                                                 <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="422.0" spacing="5.0">
                                                    <children>
-                                                      <Button fx:id="btnAdministrarGuardar" mnemonicParsing="false" onAction="#accionBotonAdministrarGuardar" text="Guardar" />
+                                                      <Button fx:id="btnAdministrarGuardar" disable="true" mnemonicParsing="false" onAction="#accionBotonAdministrarGuardar" text="Guardar" />
                                                       <Button fx:id="btnAdministrarActualizar" disable="true" mnemonicParsing="false" onAction="#accionBotonAdministrarActualizar" text="Actualizar" />
                                                       <Button fx:id="btnAdministrarEliminar" disable="true" mnemonicParsing="false" onAction="#accionBotonAdministrarEliminar" text="Eliminar" />
                                                       <Button fx:id="btnAdministrarNuevo" disable="true" mnemonicParsing="false" onAction="#limpiarInformacionFormularioAdministrar" text="Nuevo" />

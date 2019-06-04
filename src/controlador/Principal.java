@@ -264,6 +264,83 @@ public class Principal implements Initializable {
         conexion.desconectar();
     }
 
+    public void refrescarTablaEmpleado(){
+        conexion = new DbConnection();
+        conexion.getConnection();
+        listaInformacionEmpleados = FXCollections.observableArrayList();
+        Empleado.llenarInformacionEmpleados(conexion.getConnection(), listaInformacionEmpleados);
+        tblvempleado.setItems(listaInformacionEmpleados);
+        listaEmpleados = FXCollections.observableArrayList();
+        Empleado.listarEmpleados(conexion.getConnection(), listaEmpleados);
+        cmbUsuarioEmpleado.setItems(listaEmpleados);
+
+        listaRoles = FXCollections.observableArrayList();
+        Rol.llenarInformacion(conexion.getConnection(), listaRoles);
+        cmbRol.setItems(listaRoles);
+
+        listaTipoDocumentoIdentidad = FXCollections.observableArrayList();
+        TipoDocumentoIdentidad.llenarInformacion(conexion.getConnection(), listaTipoDocumentoIdentidad);
+        cmbTipoDocumentoIdentidad.setItems(listaTipoDocumentoIdentidad);
+
+        listaTipoContrato = FXCollections.observableArrayList();
+        TipoSalario.llenarInformacion(conexion.getConnection(), listaTipoContrato);
+        cmbTipoContrato.setItems(listaTipoContrato);
+
+        listaEmpleados = FXCollections.observableArrayList();
+        Empleado.listarEmpleados(conexion.getConnection(), listaEmpleados);
+        cmbUsuarioEmpleado.setItems(listaEmpleados);
+
+
+
+        listaInformacionEmpleados = FXCollections.observableArrayList();
+        Empleado.llenarInformacionEmpleados(conexion.getConnection(), listaInformacionEmpleados);
+        tblvempleado.setItems(listaInformacionEmpleados);
+
+        listaInformacionUsuarios = FXCollections.observableArrayList();
+        Usuario.llenarInformacionUsuario(conexion.getConnection(), listaInformacionUsuarios);
+        tblvUsuario.setItems(listaInformacionUsuarios);
+        conexion.desconectar();
+    }
+
+    public void refrescarInformacionUsuario(){
+        conexion = new DbConnection();
+        conexion.getConnection();
+        listaInformacionUsuarios = FXCollections.observableArrayList();
+        Usuario.llenarInformacionUsuario(conexion.getConnection(), listaInformacionUsuarios);
+        tblvUsuario.setItems(listaInformacionUsuarios);
+
+        listaEmpleados = FXCollections.observableArrayList();
+        Empleado.listarEmpleados(conexion.getConnection(), listaEmpleados);
+        cmbUsuarioEmpleado.setItems(listaEmpleados);
+
+        listaRoles = FXCollections.observableArrayList();
+        Rol.llenarInformacion(conexion.getConnection(), listaRoles);
+        cmbRol.setItems(listaRoles);
+
+        listaTipoDocumentoIdentidad = FXCollections.observableArrayList();
+        TipoDocumentoIdentidad.llenarInformacion(conexion.getConnection(), listaTipoDocumentoIdentidad);
+        cmbTipoDocumentoIdentidad.setItems(listaTipoDocumentoIdentidad);
+
+        listaTipoContrato = FXCollections.observableArrayList();
+        TipoSalario.llenarInformacion(conexion.getConnection(), listaTipoContrato);
+        cmbTipoContrato.setItems(listaTipoContrato);
+
+        listaEmpleados = FXCollections.observableArrayList();
+        Empleado.listarEmpleados(conexion.getConnection(), listaEmpleados);
+        cmbUsuarioEmpleado.setItems(listaEmpleados);
+
+
+
+        listaInformacionEmpleados = FXCollections.observableArrayList();
+        Empleado.llenarInformacionEmpleados(conexion.getConnection(), listaInformacionEmpleados);
+        tblvempleado.setItems(listaInformacionEmpleados);
+
+        listaInformacionUsuarios = FXCollections.observableArrayList();
+        Usuario.llenarInformacionUsuario(conexion.getConnection(), listaInformacionUsuarios);
+        tblvUsuario.setItems(listaInformacionUsuarios);
+        conexion.desconectar();
+    }
+
     public void gestionarEventos(){
         tblvempleado.getSelectionModel().selectedItemProperty().addListener(
                 new ChangeListener<Empleado>() {
@@ -305,6 +382,7 @@ public class Principal implements Initializable {
                             cmbTipoContrato.setValue(valorSeleccionado.getTipoSalarioEmpleado());
                             tfSueldoBaseEmpleado.setText(String.valueOf(valorSeleccionado.getSueldoBaseEmpleado()));
                             btnAdministrarGuardar.setDisable(true);
+                            rbConfirmaInformacionEmpleado.setSelected(false);
                             btnAdministrarActualizar.setDisable(false);
                             btnAdministrarEliminar.setDisable(false);
                             btnAdministrarNuevo.setDisable(false);
@@ -330,7 +408,7 @@ public class Principal implements Initializable {
                                 rbUsuarioActivo.setSelected(false);
                                 rbUsuarioInactivo.setSelected(true);
                             }
-
+                            rbConfirmaInformacionUsuario.setSelected(false);
                             btnAdministrarGuardar.setDisable(true);
                             btnAdministrarActualizar.setDisable(false);
                             btnAdministrarEliminar.setDisable(false);
@@ -366,7 +444,7 @@ public class Principal implements Initializable {
         pfClaveUsuario.setText(null);
         rbUsuarioActivo.setSelected(false);
         rbUsuarioInactivo.setSelected(false);
-        btnAdministrarGuardar.setDisable(false);
+        btnAdministrarGuardar.setDisable(true);
         btnAdministrarActualizar.setDisable(true);
         btnAdministrarEliminar.setDisable(true);
     }
@@ -401,7 +479,7 @@ public class Principal implements Initializable {
         tfNombreTelefonoPersonaContactoEmpleado.setText(null);
         cmbTipoContrato.setValue(null);
         tfSueldoBaseEmpleado.setText(null);
-        btnAdministrarGuardar.setDisable(false);
+        btnAdministrarGuardar.setDisable(true);
         btnAdministrarActualizar.setDisable(true);
         btnAdministrarEliminar.setDisable(true);
         tfIdEmpleado.setDisable(true);
@@ -460,14 +538,12 @@ public class Principal implements Initializable {
         }
     }
 
-    private void actualizarEmpleado() {
-        System.out.println(Date.valueOf(dtpFechaIngresoEmpleado.getValue()));
-    }
+
 
     @FXML
     public void accionBotonAdministrarEliminar(){
         if (areaActivaEmpleado&&rbConfirmaInformacionEmpleado.isSelected()){
-            eliminarEmpleado();
+            borrarEmpleado();
             rbConfirmaInformacionEmpleado.setSelected(false);
         }
         else if (areaActivaUsuario&&rbConfirmaInformacionUsuario.isSelected()){
@@ -491,6 +567,12 @@ public class Principal implements Initializable {
             mensaje.setContentText("El usuario "+nombreUsuarioSesion+" tiene la sesión activa, seleccione otro usuario o cierre sesión e inicie con otra cuenta antes de borrarlo.");
             mensaje.setHeaderText("Motivo:");
             mensaje.show();
+        }else if("admin".equals(u.getNombreUsuario())){
+            Alert mensaje = new Alert(Alert.AlertType.INFORMATION);
+            mensaje.setTitle("No se puede borrar el usuaro: "+"admin");
+            mensaje.setContentText("El usuario admin tiene privilegios de superadministrador.\n"+nombreUsuarioSesion+" no tiene el nivel de acceso correspodiente.");
+            mensaje.setHeaderText("Motivo:");
+            mensaje.show();
         }else{
             int resultado = procesoUsuario.borrarDatosUsuario(u);
             if(resultado==1) {
@@ -511,22 +593,53 @@ public class Principal implements Initializable {
         }
     }
 
-    private void eliminarEmpleado() {
+    private void borrarEmpleado() {
+        Empleado unEmpleado = new Empleado(
+                Integer.parseInt(tfIdEmpleado.getText())
+        );
 
+        int resultado = procesoEmpleado.borrarDatosEmpleado(unEmpleado);
+        if(resultado==1) {
+            //listaInformacionUsuarios.remove(tblvUsuario.getSelectionModel().getFocusedIndex());
+            listaInformacionEmpleados = FXCollections.observableArrayList();
+            conexion = new DbConnection();
+            conexion.getConnection();
+            Empleado.llenarInformacionEmpleados(conexion.getConnection(), listaInformacionEmpleados);
+            conexion.desconectar();
+            tblvempleado.setItems(listaInformacionEmpleados);
+            limpiarInformacionEmpleado();
+            Alert mensaje = new Alert(Alert.AlertType.INFORMATION);
+            mensaje.setTitle("Registro borrado");
+            mensaje.setContentText("El empleado ha sido borrado exitosamente");
+            mensaje.setHeaderText("Resultado:");
+            mensaje.show();
+        }
     }
+
 
     @FXML
     public void areaEmpleadoActiva(){
-        areaActivaEmpleado=true;
-        areaActivaUsuario=false;
+        if(!areaActivaEmpleado){
+            refrescarTablaEmpleado();
+            areaActivaEmpleado=true;
+            areaActivaUsuario=false;
+            rbConfirmaInformacionUsuario.setSelected(false);
+            if(rbConfirmaInformacionEmpleado.isSelected())btnAdministrarGuardar.setDisable(false);
+        }
         rbConfirmaInformacionUsuario.setSelected(false);
+        if(rbConfirmaInformacionEmpleado.isSelected())btnAdministrarGuardar.setDisable(false);
     }
 
     @FXML
     public void areaUsuarioActiva(){
-        areaActivaUsuario=true;
-        areaActivaEmpleado=false;
+        if(!areaActivaUsuario){
+            refrescarInformacionUsuario();
+            areaActivaUsuario=true;
+            areaActivaEmpleado=false;
+            rbConfirmaInformacionEmpleado.setSelected(false);
+        }
         rbConfirmaInformacionEmpleado.setSelected(false);
+        if(rbConfirmaInformacionUsuario.isSelected())btnAdministrarGuardar.setDisable(false);
     }
 
     public void guardarEmpleado(){
@@ -600,5 +713,52 @@ public class Principal implements Initializable {
         }
     }
 
+    public void actualizarEmpleado(){
+
+        Empleado unEmpleado = new Empleado(
+                Integer.parseInt(tfIdEmpleado.getText()),
+                cmbRol.getSelectionModel().getSelectedItem(),
+                Date.valueOf(dtpFechaIngresoEmpleado.getValue()),
+                tfNacionalidadEmpleado.getText(),
+                rbEmpleadoEsUsuarioDelSistema.isSelected(),
+                cmbTipoDocumentoIdentidad.getSelectionModel().getSelectedItem(),
+                tfNumeroDocumentoEmpleado.getText(),
+                tfLugarExpedicionDocumentoEmpleado.getText(),
+                Date.valueOf(dtpFechaExpedicionDocumentoEmpleado.getValue()),
+                tfLugarNacimientoEmpleado.getText(),
+                Date.valueOf(dtpFechaNacimientoEmpleado.getValue()),
+                tfNombresEmpleado.getText(),
+                tfApellidosEmpleado.getText(),
+                tfCorreoEmpleado.getText(),
+                tfCodigoPostalEmpleado.getText(),
+                tfTelefonoFijoEmpleado.getText(),
+                tfTelefonoCelularEmpleado.getText(),
+                tfTelefonoAlternativoEmpleado.getText(),
+                tfDireccionEmpleado.getText(),
+                tfSueldoBaseEmpleado.getText(),
+                tfUpzEmpleado.getText(),
+                tfLocalidadEmpleado.getText(),
+                tfMunicipioEmpleado.getText(),
+                tfDepartamentoEmpleado.getText(),
+                tfNombrePersonaContactoEmpleado.getText(),
+                tfNombreTelefonoPersonaContactoEmpleado.getText(),
+                cmbTipoContrato.getSelectionModel().getSelectedItem(),
+                Integer.valueOf(tfSueldoBaseEmpleado.getText())
+        );
+        int resultado= procesoEmpleado.actualizarDatosEmpleado(unEmpleado);
+        if(resultado==1){
+            listaInformacionEmpleados = FXCollections.observableArrayList();
+            conexion = new DbConnection();
+            conexion.getConnection();
+            Empleado.llenarInformacionEmpleados(conexion.getConnection(), listaInformacionEmpleados);
+            conexion.desconectar();
+            tblvempleado.setItems(listaInformacionEmpleados);
+            Alert mensaje=new Alert(Alert.AlertType.INFORMATION);
+            mensaje.setTitle("Registro actualizado");
+            mensaje.setContentText("El empleado ha sido actualizado exitosamente");
+            mensaje.setHeaderText("Resultado:");
+            mensaje.show();
+        }
+    }
 
 }

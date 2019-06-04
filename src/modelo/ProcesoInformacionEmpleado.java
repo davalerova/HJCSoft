@@ -162,35 +162,96 @@ public class ProcesoInformacionEmpleado {
         }
     }
 
-    public void actualizarDatosCliente(String codigo, String nombre, String apellido, String telefono, String correo) {
-        String actualizaSql = "UPDATE cliente SET nombrecli=?,apellidocli=?,telefonocli=?,correocli=? WHERE codigocli=?";
+    public int actualizarDatosEmpleado(Empleado unEmpleado) {
+        int idempleado = unEmpleado.getIdEmpleado();
+        int rolid = unEmpleado.getRolIdEmpleado().getIdRol();
+        Date fechaingresoempleado = unEmpleado.getFechaIngresoEmpleado();
+        String nacionalidadempleado = unEmpleado.getNacionalidadEmpleado();
+        boolean empleadoesusuariosistema = unEmpleado.getEmpleadoEsUsuarioSistema();
+        int documentoid = Integer.valueOf(unEmpleado.getTipoDocumentoIdEmpleado().getIdDocumentoIdentidad());
+        String numerodocumentoidentidadempleado = unEmpleado.getNumeroDocumentoIdentidadEmpleado();
+        String lugarexpediciondocumentoidentiadempleado = unEmpleado.getLugarExpediciónDocumentoIdentiadEmpleado();
+        Date fechaexpediciondocumentoidentiadempleado = unEmpleado.getFechaExpedicionDocumentoIdentiadEmpleado();
+        String lugarnacimientoempleado = unEmpleado.getLugarNacimientoEmpleado();
+        Date fechanacimientoempleado = unEmpleado.getFechaNacimientoEmpleado();
+        String nombresempleado = unEmpleado.getNombresEmpleado();
+        String apellidosempleado = unEmpleado.getApellidosEmpleado();
+        String emailempleado = unEmpleado.getEmailEmpleado();
+        String codigopostalempleado = unEmpleado.getCodigoPostalEmpleado();
+        String telefonoempleado = unEmpleado.getTelefonoEmpleado();
+        String celularempleado = unEmpleado.getCelularEmpleado();
+        String telefonoalternativoempleado = unEmpleado.getTelefonoAlternativoEmpleado();
+        String direccionempleado = unEmpleado.getDireccionEmpleado();
+        String departamentoempleado = unEmpleado.getDepartamentoEmpleado();
+        String municipioempleado = unEmpleado.getMunicipioEmpleado();
+        String localidadempleado = unEmpleado.getLocalidadEmpleado();
+        String upzempleado = unEmpleado.getUpzEmpleado();
+        String barrioempleado = unEmpleado.getBarrioEmpleado();
+        String nombrepersonacontactoempleado = unEmpleado.getNombrePersonaContactoEmpleado();
+        String celualarpersonacontactoempleado = unEmpleado.getCelualarPersonaContactoEmpleado();
+        int tipocontratoempleado = Integer.valueOf(unEmpleado.getTipoSalarioEmpleado().getIdTipoContrato());
+        int sueldobaseempleado = Integer.valueOf(unEmpleado.getSueldoBaseEmpleado());
+        String actualizaEmleado = "UPDATE empleado SET rolid=?, fechaingresoempleado=?, nacionalidadempleado=?, empleadoesusuariosistema=?, " +
+                "documentoid=?, numerodocumentoidentidadempleado=?, lugarexpediciondocumentoidentiadempleado=?, fechaexpediciondocumentoidentiadempleado=?, " +
+                "lugarnacimientoempleado=?, fechanacimientoempleado=?, nombresempleado=?, apellidosempleado=?, emailempleado=?, codigopostalempleado=?, " +
+                "telefonoempleado=?, celularempleado=?, telefonoalternativoempleado=?, direccionempleado=?, departamentoempleado=?, municipioempleado=?, " +
+                "localidadempleado=?, upzempleado=?, barrioempleado=?, nombrepersonacontactoempleado=?, celualarpersonacontactoempleado=?, tipocontratoempleado=?, sueldobaseempleado=?\n" +
+                "\t WHERE idempleado=?";
+
         try {
-            PreparedStatement inst = conexion.getConnection().prepareStatement(actualizaSql);
-            inst.setString(5, codigo);
-            inst.setString(1, nombre);
-            inst.setString(2, apellido);
-            inst.setString(3, telefono);
-            inst.setString(4, correo);
-            inst.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e);
+            PreparedStatement inst = conexion.getConnection().prepareStatement(actualizaEmleado);
+            inst.setInt(28,idempleado);
+            inst.setInt(1, rolid);
+            inst.setDate(2, fechaingresoempleado);
+            inst.setString(3, nacionalidadempleado);
+            inst.setBoolean(4, empleadoesusuariosistema);
+            inst.setInt(5, documentoid);
+            inst.setString(6, numerodocumentoidentidadempleado);
+            inst.setString(7, lugarexpediciondocumentoidentiadempleado);
+            inst.setDate(8, fechaexpediciondocumentoidentiadempleado);
+            inst.setString(9, lugarnacimientoempleado);
+            inst.setDate(10, fechanacimientoempleado);
+            inst.setString(11, nombresempleado);
+            inst.setString(12, apellidosempleado);
+            inst.setString(13, emailempleado);
+            inst.setString(14, codigopostalempleado);
+            inst.setString(15, telefonoempleado);
+            inst.setString(16, celularempleado);
+            inst.setString(17, telefonoalternativoempleado);
+            inst.setString(18, direccionempleado);
+            inst.setString(19, departamentoempleado);
+            inst.setString(20, municipioempleado);
+            inst.setString(21, localidadempleado);
+            inst.setString(22, upzempleado);
+            inst.setString(23, barrioempleado);
+            inst.setString(24, nombrepersonacontactoempleado);
+            inst.setString(25, celualarpersonacontactoempleado);
+            inst.setInt(26, tipocontratoempleado);
+            inst.setInt(27, sueldobaseempleado);
+
+            return inst.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            return 0;
         } catch (Exception ex) {
             System.out.println(ex.toString());
+            return 0;
         }
     }
 
-    public void borrarDatosCliente(String codigoCliente) {
-        String codigo = codigoCliente;
-        String borraSql = "DELETE FROM cliente WHERE codigocli=?";
+    public int borrarDatosEmpleado(Empleado unEmpleado) {
+        int idEmpleado = unEmpleado.getIdEmpleado();
+        String borraEmpleado = "DELETE FROM empleado WHERE idempleado=?";
         try {
-            PreparedStatement inst
-                    = conexion.getConnection().prepareStatement(borraSql);
-            inst.setString(1, codigo);
-            inst.executeUpdate();
+            PreparedStatement inst = conexion.getConnection().prepareStatement(borraEmpleado);
+            inst.setInt(1, idEmpleado);
+            return inst.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
+            return 0;
         } catch (Exception ex) {
             System.out.println(ex.toString());
+            return 0;
         }
     }
 
