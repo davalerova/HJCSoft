@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import controlador.Usuario;
 import modelo.Cliente;
 import controlador.Sesion;
 
@@ -158,55 +159,8 @@ public class ProcesoInformacionEmpleado {
         return usuario;
     }
 
-    public boolean usuarioExiste(Usuario unUsuario) {
-        String usuario = unUsuario.getUsuario();
-        String consultaSql = "SELECT*FROM usuario WHERE loginusu=?";
-        try {
-            PreparedStatement inst = conexion.getConnection().prepareStatement(consultaSql);
-            inst.setString(1, usuario);
-            ResultSet rs = inst.executeQuery();
-            usuario = "";
-            while (rs.next() == true) {
-                usuario = rs.getString(4);
-            }
 
-        } catch (SQLException e) {
-            System.out.println(e);
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-        }
-        if (usuario.equals(unUsuario.usuario)) {
-            if(usuario.length()!=0)System.out.println("Este usuario ya existe, por favor ingrese un nuevo usuario");
-            else System.out.println("Debe introducir los datos completos");
-            return true;
-        }
-        registrarUsuario(unUsuario);
-        return false;
 
-    }
-    public void registrarUsuario(Usuario unUsuario) {
-        String nombre = unUsuario.getNombre();
-        String apellido = unUsuario.getApellido();
-        String correo = unUsuario.getCorreo();
-        String usuario = unUsuario.getUsuario();
-        String clave = unUsuario.getClave();
-        String registroCliente = "INSERT INTO usuario(nombreusu,apellidousu,correousu,loginusu,passwordusu) VALUES(?,?,?,?,md5(?))";
-
-        try {
-            PreparedStatement inst
-                    = conexion.getConnection().prepareStatement(registroCliente);
-            inst.setString(1, nombre);
-            inst.setString(2, apellido);
-            inst.setString(3, correo);
-            inst.setString(4, usuario);
-            inst.setString(5, clave);
-            inst.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e);
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-        }
-    }
     public void registrarLoginFallido(Sesion sesion) {
         String usuario = sesion.getUsuario();
         String clave = sesion.getContrasena();
