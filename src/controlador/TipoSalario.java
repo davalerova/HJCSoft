@@ -13,43 +13,43 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class TipoSalario {
-    private IntegerProperty idTipoContrato;
-    private StringProperty nombreTipoContrato;
+    private IntegerProperty idTipoSalario;
+    private StringProperty nombreTipoSalario;
 
-    public TipoSalario(int idTipoContrato, String nombreTipoContrato) {
-        this.idTipoContrato = new SimpleIntegerProperty(idTipoContrato);
-        this.nombreTipoContrato = new SimpleStringProperty(nombreTipoContrato);
+    public TipoSalario(int idTipoSalario, String nombreTipoSalario) {
+        this.idTipoSalario = new SimpleIntegerProperty(idTipoSalario);
+        this.nombreTipoSalario = new SimpleStringProperty(nombreTipoSalario);
     }
 
-    //Metodos atributo: idTipoContrato
-    public int getIdTipoContrato() {
-        return idTipoContrato.get();
+    //Metodos atributo: idTipoSalario
+    public int getIdTipoSalario() {
+        return idTipoSalario.get();
     }
-    public void setIdTipoContrato(int idTipoContrato) {
-        this.idTipoContrato = new SimpleIntegerProperty(idTipoContrato);
+    public void setIdTipoSalario(int idTipoSalario) {
+        this.idTipoSalario = new SimpleIntegerProperty(idTipoSalario);
     }
     public IntegerProperty IdTipoContratoProperty() {
-        return idTipoContrato;
+        return idTipoSalario;
     }
-    //Metodos atributo: nombreTipoContrato
-    public String getNombreTipoContrato() {
-        return nombreTipoContrato.get();
+    //Metodos atributo: nombreTipoSalario
+    public String getNombreTipoSalario() {
+        return nombreTipoSalario.get();
     }
-    public void setNombreTipoContrato(String nombreTipoContrato) {
-        this.nombreTipoContrato = new SimpleStringProperty(nombreTipoContrato);
+    public void setNombreTipoSalario(String nombreTipoSalario) {
+        this.nombreTipoSalario = new SimpleStringProperty(nombreTipoSalario);
     }
     public StringProperty NombreTipoContratoProperty() {
-        return nombreTipoContrato;
+        return nombreTipoSalario;
     }
     public static void llenarInformacion(Connection connection, ObservableList<TipoSalario> lista){
         try{
             Statement statement = connection.createStatement();
-            ResultSet resultado = statement.executeQuery("SELECT idtipocontrato, nombretipocontrato FROM tipocontrato");
+            ResultSet resultado = statement.executeQuery("SELECT idtiposalario, nombretiposalario FROM tiposalario");
             while (resultado.next()){
                 lista.add(
                         new TipoSalario(
-                                resultado.getInt("idtipocontrato"),
-                                resultado.getString("nombretipocontrato")
+                                resultado.getInt("idtiposalario"),
+                                resultado.getString("nombretiposalario")
                         )
                 );
             }
@@ -59,6 +59,6 @@ public class TipoSalario {
     }
     @Override
     public String toString(){
-        return nombreTipoContrato.get();
+        return nombreTipoSalario.get();
     }
 }

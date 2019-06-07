@@ -2,9 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Empleado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Empleado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Principal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Principal$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Principal$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Principal$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Rol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HJCSoft/controlador/Rol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HJCSoft/controlador/TipoSalario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HJCSoft/controlador/TipoSalario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HJCSoft/modelo/DbConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HJCSoft/modelo/DbConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HJCSoft/modelo/ProcesoInformacionEmpleado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HJCSoft/modelo/ProcesoInformacionEmpleado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HJCSoft/vista/Principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HJCSoft/vista/Principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/Empleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controlador/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controlador/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/Rol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/TipoSalario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/TipoSalario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modelo/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modelo/ProcesoInformacionEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/ProcesoInformacionEmpleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vista/Principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/Principal.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -65,11 +80,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controlador/Login.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index/Index.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
+            <state relative-caret-position="34">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,10 +93,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/ProcesoInformacionUsuario.java">
+        <entry file="file://$PROJECT_DIR$/src/vista/Vistas.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controlador/Rol.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="124" column="32" lean-forward="true" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
+            <state relative-caret-position="255">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelo/ProcesoInformacionEmpleado.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="198" column="38" lean-forward="true" selection-start-line="198" selection-start-column="38" selection-end-line="198" selection-end-column="38" />
+            <state relative-caret-position="4522">
+              <caret line="268" column="76" selection-start-line="268" selection-start-column="76" selection-end-line="268" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,9 +122,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controlador/Empleado.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7089">
+              <caret line="523" column="79" selection-start-line="523" selection-start-column="79" selection-end-line="523" selection-end-column="79" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5191#5192#0" expanded="true" />
+                <element signature="e#5262#5263#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controlador/Usuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
+            <state relative-caret-position="1020">
               <caret line="84" selection-start-line="84" selection-end-line="84" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -116,47 +150,45 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controlador/Empleado.java">
+        <entry file="file://$PROJECT_DIR$/src/controlador/TipoDocumentoIdentidad.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="87" column="64" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
+            <state relative-caret-position="748">
+              <caret line="52" column="55" selection-start-line="52" selection-start-column="55" selection-end-line="52" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5191#5192#0" expanded="true" />
-                <element signature="e#5232#5233#0" expanded="true" />
-                <element signature="e#5221#5222#0" expanded="true" />
-                <element signature="e#5260#5261#0" expanded="true" />
+                <element signature="e#2417#2418#0" expanded="true" />
+                <element signature="e#2470#2471#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/DbConnection.java">
+        <entry file="file://$PROJECT_DIR$/src/controlador/TipoSalario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+            <state relative-caret-position="493">
+              <caret line="37" column="64" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controlador/Principal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="755" column="12" lean-forward="true" selection-start-line="755" selection-start-column="12" selection-end-line="759" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index/Index.java">
+        <entry file="file://$PROJECT_DIR$/../Biblioteca/src/index/Index.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            <state relative-caret-position="306">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,8 +207,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>login</find>
-      <find>png</find>
       <find>Metodos</find>
       <find>\n</find>
       <find>\t</find>
@@ -191,16 +221,28 @@
       <find>act</find>
       <find>actualizarEmpleado</find>
       <find>accionBotonAdministrarActualizar</find>
-      <find>lista</find>
       <find>cmb</find>
       <find>cmbUsuarioEmpleado</find>
       <find>cmbRol</find>
       <find>listaRoles</find>
       <find>limp</find>
       <find>administrad</find>
+      <find>lista</find>
+      <find>add</find>
+      <find>idempleado</find>
+      <find>rolid</find>
+      <find>idrol</find>
+      <find>contrato</find>
+      <find>cmbR</find>
+      <find>documentoid</find>
+      <find>tipocontratoempleado</find>
+      <find>empleado_</find>
     </findStrings>
     <replaceStrings>
       <replace>Métodos</replace>
+      <replace>salario</replace>
+      <replace>tipodocumentoempleadoid</replace>
+      <replace>tiposalarioempleadoid</replace>
     </replaceStrings>
   </component>
   <component name="FindManager">
@@ -245,20 +287,20 @@
         <option value="$PROJECT_DIR$/src/vista/Principal.fxml" />
         <option value="$PROJECT_DIR$/src/controlador/Cliente.java" />
         <option value="$PROJECT_DIR$/src/controlador/Controller.java" />
-        <option value="$PROJECT_DIR$/src/modelo/DbConnection.java" />
         <option value="$PROJECT_DIR$/src/controlador/TipoDocumentoIdentidad.java" />
-        <option value="$PROJECT_DIR$/src/controlador/Rol.java" />
-        <option value="$PROJECT_DIR$/src/controlador/TipoSalario.java" />
         <option value="$PROJECT_DIR$/src/vista/Vistas.java" />
         <option value="$PROJECT_DIR$/src/modelo/Usuario.java" />
         <option value="$PROJECT_DIR$/src/modelo/ProcesoInformacionCliente.java" />
         <option value="$PROJECT_DIR$/src/controlador/Usuario.java" />
         <option value="$PROJECT_DIR$/src/index/Index.java" />
         <option value="$PROJECT_DIR$/src/modelo/ProcesoInformacionUsuario.java" />
-        <option value="$PROJECT_DIR$/src/controlador/Empleado.java" />
+        <option value="$PROJECT_DIR$/src/modelo/DbConnection.java" />
+        <option value="$PROJECT_DIR$/src/controlador/Rol.java" />
+        <option value="$PROJECT_DIR$/src/controlador/TipoSalario.java" />
         <option value="$PROJECT_DIR$/src/modelo/ProcesoInformacionEmpleado.java" />
-        <option value="$PROJECT_DIR$/src/controlador/Principal.java" />
+        <option value="$PROJECT_DIR$/src/controlador/Empleado.java" />
         <option value="$PROJECT_DIR$/src/controlador/Login.java" />
+        <option value="$PROJECT_DIR$/src/controlador/Principal.java" />
       </list>
     </option>
   </component>
@@ -290,36 +332,7 @@
             <path>
               <item name="HJCSoft" type="b2602c69:ProjectViewProjectNode" />
               <item name="HJCSoft" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HJCSoft" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HJCSoft" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HJCSoft" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HJCSoft" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controlador" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HJCSoft" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HJCSoft" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HJCSoft" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HJCSoft" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modelo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HJCSoft" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HJCSoft" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="recursos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HJCSoft" type="b2602c69:ProjectViewProjectNode" />
@@ -357,6 +370,10 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\daval\IdeaProjects\HJCSoft\src\recursos" />
       <recent name="C:\Users\daval\IdeaProjects\HJCSoft\Driver" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="vista" />
+      <recent name="index" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\daval\IdeaProjects\HJCSoft\src\vista" />
@@ -495,10 +512,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1933" height="898" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1929" height="893" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1687133" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17174959" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -506,8 +522,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32418302" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.327654" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30921054" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -518,7 +534,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.32896462" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32941177" />
+      <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32418302" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -868,8 +884,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../TutorialJavaFX/src/vista/Login.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controlador/OrdenDeServicio.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -888,17 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/Login.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/controlador/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="218" selection-start-line="218" selection-end-line="218" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controlador/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -909,14 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/Principal.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="708" column="113" selection-start-line="708" selection-start-column="107" selection-end-line="708" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -924,43 +921,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/TipoDocumentoIdentidad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="63" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2417#2418#0" expanded="true" />
-            <element signature="e#2477#2478#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/Rol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1859#1860#0" expanded="true" />
-            <element signature="e#1897#1898#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/TipoSalario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2185#2186#0" expanded="true" />
-            <element signature="e#2232#2233#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/Vistas.java">
+    <entry file="file://$PROJECT_DIR$/../Biblioteca/src/vista/Vistas.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
@@ -996,9 +957,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_212/src.zip!/java/sql/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="275" selection-start-line="275" selection-end-line="275" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/ProcesoInformacionUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="124" column="32" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="124" column="31" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/DbConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/Login.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/Principal.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="1204" selection-start-line="1204" selection-end-line="1204" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/Rol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/ProcesoInformacionEmpleado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4522">
+          <caret line="268" column="76" selection-start-line="268" selection-start-column="76" selection-end-line="268" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/Empleado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7089">
+          <caret line="523" column="79" selection-start-line="523" selection-start-column="79" selection-end-line="523" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5191#5192#0" expanded="true" />
+            <element signature="e#5262#5263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controlador/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
+        <state relative-caret-position="1020">
           <caret line="84" selection-start-line="84" selection-end-line="84" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1008,58 +1057,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/DbConnection.java">
+    <entry file="file://$PROJECT_DIR$/src/controlador/TipoDocumentoIdentidad.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        <state relative-caret-position="748">
+          <caret line="52" column="55" selection-start-line="52" selection-start-column="55" selection-end-line="52" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2417#2418#0" expanded="true" />
+            <element signature="e#2470#2471#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_212/src.zip!/java/sql/Date.java">
+    <entry file="file://$PROJECT_DIR$/src/controlador/TipoSalario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="275" selection-start-line="275" selection-end-line="275" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/ProcesoInformacionEmpleado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="198" column="38" lean-forward="true" selection-start-line="198" selection-start-column="38" selection-end-line="198" selection-end-column="38" />
+        <state relative-caret-position="493">
+          <caret line="37" column="64" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/ProcesoInformacionUsuario.java">
+    <entry file="file://$PROJECT_DIR$/../Biblioteca/src/index/Index.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="124" column="32" lean-forward="true" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/Empleado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="87" column="64" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5191#5192#0" expanded="true" />
-            <element signature="e#5232#5233#0" expanded="true" />
-            <element signature="e#5221#5222#0" expanded="true" />
-            <element signature="e#5260#5261#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/Principal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="755" column="12" lean-forward="true" selection-start-line="755" selection-start-column="12" selection-end-line="759" selection-end-column="27" />
+        <state relative-caret-position="306">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1068,21 +1091,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index/Index.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state relative-caret-position="34">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/vista/Vistas.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/Principal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
         </state>
       </provider>
     </entry>

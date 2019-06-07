@@ -132,7 +132,13 @@
                                                                                     <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
                                                                                        <children>
                                                                                           <Label text="Dirección:" />
-                                                                                          <TextField prefHeight="25.0" prefWidth="368.0" />
+                                                                                          <TextField fx:id="tfDireccionEmpleado1" prefHeight="25.0" prefWidth="239.0" />
+                                                                                          <Label text="Barrio:">
+                                                                                             <HBox.margin>
+                                                                                                <Insets left="5.0" />
+                                                                                             </HBox.margin>
+                                                                                          </Label>
+                                                                                          <TextField prefHeight="25.0" prefWidth="90.0" />
                                                                                        </children>
                                                                                     </HBox>
                                                                                     <HBox prefHeight="100.0" prefWidth="428.0" GridPane.rowIndex="6">
@@ -892,8 +898,8 @@
                                                                                     </HBox>
                                                                                     <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="14">
                                                                                        <children>
-                                                                                          <Label text="Tipo de contrato:" />
-                                                                                          <ComboBox fx:id="cmbTipoContrato" prefHeight="25.0" prefWidth="178.0" />
+                                                                                          <Label text="Tipo de salario:" />
+                                                                                          <ComboBox fx:id="cmbTipoContrato" prefHeight="25.0" prefWidth="188.0" />
                                                                                           <Label text="Sueldo base:">
                                                                                              <padding>
                                                                                                 <Insets left="5.0" />

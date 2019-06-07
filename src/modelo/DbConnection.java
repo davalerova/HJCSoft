@@ -9,6 +9,8 @@ package modelo;
  *
  * @author USUARIO
  */
+import javafx.scene.control.Alert;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -25,6 +27,11 @@ public class DbConnection {
             Class.forName("org.postgresql.Driver");
             this.conn = DriverManager.getConnection(url, "postgres", password);
         } catch (SQLException e) {
+            Alert mensaje=new Alert(Alert.AlertType.INFORMATION);
+            mensaje.setTitle("HJCSoft");
+            mensaje.setContentText(""+e);
+            mensaje.setHeaderText("Error de conexión");
+            mensaje.show();
             System.out.println(e);
         } catch (ClassNotFoundException e) {
             System.out.println(e);

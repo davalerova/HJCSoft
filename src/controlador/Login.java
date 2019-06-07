@@ -70,6 +70,7 @@ public class Login implements Initializable {
         int captcha = Integer.parseInt(captchaIn.getText());
         sesion.setUsuario(usuarioIn.getText());
         sesion.setContrasena(claveIn.getText());
+
         if(procesoUsuario.validarUsuario(sesion).equals(sesion.getUsuario())&&!(sesion.getUsuario().length()==0||sesion.getContrasena().length()==0)&&captcha==cp.getSum()&&robot){
             Principal.nombreUsuarioSesion=sesion.getUsuario();
             Vistas vista=new Vistas();

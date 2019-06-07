@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class Empleado {
     private IntegerProperty idEmpleado;
-    private Rol rolIdEmpleado;
+    private Rol rolEmpleadoId;
     private Date fechaIngresoEmpleado;
     private StringProperty nacionalidadEmpleado;
     private SimpleBooleanProperty empleadoEsUsuarioSistema;
@@ -36,7 +36,7 @@ public class Empleado {
     private TipoSalario tipoSalarioEmpleado;
     private IntegerProperty sueldoBaseEmpleado;
 
-    public Empleado(int idEmpleado, Rol rolIdEmpleado, Date fechaIngresoEmpleado,
+    public Empleado(int idEmpleado, Rol rolEmpleadoId, Date fechaIngresoEmpleado,
                     String nacionalidadEmpleado, boolean empleadoEsUsuarioSistema, TipoDocumentoIdentidad tipoDocumentoIdEmpleado,
                     String numeroDocumentoIdentidadEmpleado, String lugarExpediciónDocumentoIdentiadEmpleado, Date fechaExpediciónDocumentoIdentiadEmpleado,
                     String lugarNacimientoEmpleado, Date fechaNacimientoEmpleado, String nombresEmpleado,
@@ -47,7 +47,7 @@ public class Empleado {
                     String nombrePersonaContactoEmpleado, String celualarPersonaContactoEmpleado, TipoSalario tipoSalarioEmpleado,
                     int sueldoBaseEmpleado) {
         this.idEmpleado = new SimpleIntegerProperty(idEmpleado);
-        this.rolIdEmpleado = rolIdEmpleado;
+        this.rolEmpleadoId = rolEmpleadoId;
         this.fechaIngresoEmpleado = fechaIngresoEmpleado;
         this.nacionalidadEmpleado = new SimpleStringProperty(nacionalidadEmpleado);
         this.empleadoEsUsuarioSistema = new SimpleBooleanProperty(empleadoEsUsuarioSistema);
@@ -101,13 +101,13 @@ public class Empleado {
         return idEmpleado;
     }
 
-    //Metodos atributo: rolIdEmpleado
-    public Rol getRolIdEmpleado() {
-        return rolIdEmpleado;
+    //Metodos atributo: rolEmpleadoId
+    public Rol getRolEmpleadoId() {
+        return rolEmpleadoId;
     }
 
-    public void setRolIdEmpleado(Rol rolIdEmpleado) {
-        this.rolIdEmpleado = rolIdEmpleado;
+    public void setRolEmpleadoId(Rol rolEmpleadoId) {
+        this.rolEmpleadoId = rolEmpleadoId;
     }
 
     //Metodos atributo: fechaIngresoEmpleado
@@ -451,11 +451,11 @@ public class Empleado {
             Statement statement = connection.createStatement();
             ResultSet resultado = statement.executeQuery("SELECT " +
                     "A.idempleado, " +
-                    "A.rolid, " +
+                    "A.rolempleadoid, " +
                     "A.fechaingresoempleado, " +
                     "A.nacionalidadempleado, " +
                     "A.empleadoesusuariosistema, " +
-                    "A.documentoid, " +
+                    "A.tipodocumentoempleadoid, " +
                     "A.numerodocumentoidentidadempleado, " +
                     "A.lugarexpediciondocumentoidentiadempleado, " +
                     "A.fechaexpediciondocumentoidentiadempleado," +
@@ -476,28 +476,28 @@ public class Empleado {
                     "A.barrioempleado, " +
                     "A.nombrepersonacontactoempleado, " +
                     "A.celualarpersonacontactoempleado, " +
-                    "A.tipocontratoempleado, " +
+                    "A.tiposalarioempleadoid, " +
                     "A.sueldobaseempleado, " +
-                    "rol.nombrerol, " +
+                    "rolempleado.nombrerolempleado, " +
                     "documentoidentidad.nombredocumentoidentidad, " +
-                    "tipocontrato.nombretipocontrato " +
+                    "tiposalario.nombretiposalario " +
                     "FROM empleado A " +
-                    "INNER JOIN rol " +
-                    "ON(A.rolid = rol.idrol) " +
+                    "INNER JOIN rolempleado " +
+                    "ON(A.rolempleadoid = rolempleado.idrolempleado) " +
                     "INNER JOIN documentoidentidad " +
-                    "ON(A.documentoid = documentoidentidad.iddocumentoidentidad) " +
-                    "INNER JOIN tipocontrato " +
-                    "ON(A.tipocontratoempleado = tipocontrato.idtipocontrato);");
+                    "ON(A.tipodocumentoempleadoid = documentoidentidad.iddocumentoidentidad) " +
+                    "INNER JOIN tiposalario " +
+                    "ON(A.tiposalarioempleadoid = tiposalario.idtiposalario);");
             while (resultado.next()) {
                 lista.add(
                         new Empleado(
                                 resultado.getInt("idempleado"),
-                                new Rol(resultado.getInt("rolid"), resultado.getString("nombrerol")),
+                                new Rol(resultado.getInt("rolempleadoid"), resultado.getString("nombrerolempleado")),
                                 resultado.getDate("fechaingresoempleado"),
                                 resultado.getString("nacionalidadempleado"),
                                 resultado.getBoolean("empleadoesusuariosistema"),
                                 new TipoDocumentoIdentidad(
-                                        resultado.getInt("documentoid"),
+                                        resultado.getInt("tipodocumentoempleadoid"),
                                         resultado.getString("nombredocumentoidentidad")
                                 ),
                                 resultado.getString("numerodocumentoidentidadempleado"),
@@ -521,8 +521,8 @@ public class Empleado {
                                 resultado.getString("nombrepersonacontactoempleado"),
                                 resultado.getString("celualarpersonacontactoempleado"),
                                 new TipoSalario(
-                                        resultado.getInt("tipocontratoempleado"),
-                                        resultado.getString("nombretipocontrato")
+                                        resultado.getInt("tiposalarioempleadoid"),
+                                        resultado.getString("nombretiposalario")
                                 ),
                                 resultado.getInt("sueldobaseempleado")
                         )
@@ -536,11 +536,11 @@ public class Empleado {
     public int registrarEmpleado(Connection connection) {
         try {
             System.out.println("INSERT INTO empleado(" +
-                    "rolid, " +
+                    "rolempleadoid, " +
                     "fechaingresoempleado, " +
                     "nacionalidadempleado, " +
                     "empleadoesusuariosistema, " +
-                    "documentoid, " +
+                    "tipodocumentoempleadoid, " +
                     "numerodocumentoidentidadempleado, " +
                     "lugarexpediciondocumentoidentiadempleado, " +
                     "fechaexpediciondocumentoidentiadempleado, " +
@@ -561,15 +561,15 @@ public class Empleado {
                     "barrioempleado, " +
                     "nombrepersonacontactoempleado, " +
                     "celualarpersonacontactoempleado, " +
-                    "tipocontratoempleado, " +
+                    "tiposalarioempleadoid, " +
                     "sueldobaseempleado)" +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
             PreparedStatement instruccion =connection.prepareStatement("INSERT INTO empleado(" +
-                    "rolid, " +
+                    "rolempleadoid, " +
                     "fechaingresoempleado, " +
                     "nacionalidadempleado, " +
                     "empleadoesusuariosistema, " +
-                    "documentoid, " +
+                    "tipodocumentoempleadoid, " +
                     "numerodocumentoidentidadempleado, " +
                     "lugarexpediciondocumentoidentiadempleado, " +
                     "fechaexpediciondocumentoidentiadempleado, " +
@@ -590,10 +590,10 @@ public class Empleado {
                     "barrioempleado, " +
                     "nombrepersonacontactoempleado, " +
                     "celualarpersonacontactoempleado, " +
-                    "tipocontratoempleado, " +
+                    "tiposalarioempleadoid, " +
                     "sueldobaseempleado)" +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
-            instruccion.setInt(1,rolIdEmpleado.getIdRol());
+            instruccion.setInt(1, rolEmpleadoId.getIdRolEmpleado());
             instruccion.setDate(2,fechaIngresoEmpleado);
             instruccion.setString(3,nacionalidadEmpleado.get());
             instruccion.setBoolean(4,empleadoEsUsuarioSistema.get());
@@ -618,7 +618,7 @@ public class Empleado {
             instruccion.setString(23,barrioEmpleado.get());
             instruccion.setString(24,nombrePersonaContactoEmpleado.get());
             instruccion.setString(25,celualarPersonaContactoEmpleado.get());
-            instruccion.setInt(26,tipoSalarioEmpleado.getIdTipoContrato());
+            instruccion.setInt(26,tipoSalarioEmpleado.getIdTipoSalario());
             instruccion.setInt(27,sueldoBaseEmpleado.get());
 
             return instruccion.executeUpdate();

@@ -1,8 +1,5 @@
 package controlador;
 
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -18,10 +15,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import modelo.DbConnection;
-import modelo.ProcesoInformacionCliente;
 import modelo.ProcesoInformacionEmpleado;
 import modelo.ProcesoInformacionUsuario;
-import sun.plugin2.main.client.DisconnectedExecutionContext;
 import vista.Vistas;
 
 import java.io.IOException;
@@ -251,7 +246,7 @@ public class Principal implements Initializable {
         clmnIdEmpleado.setCellValueFactory(new PropertyValueFactory<Empleado,Integer>("idEmpleado"));
         clmnNombreEmpleado.setCellValueFactory(new PropertyValueFactory<Empleado,String>("nombresEmpleado"));
         clmnApellidosEmpleado.setCellValueFactory(new PropertyValueFactory<Empleado,String>("apellidosEmpleado"));
-        clmnRolEmpleado.setCellValueFactory(new PropertyValueFactory<Empleado,Rol>("rolIdEmpleado"));
+        clmnRolEmpleado.setCellValueFactory(new PropertyValueFactory<Empleado,Rol>("rolEmpleadoId"));
         clmnTipoSalarioEmpleado.setCellValueFactory(new PropertyValueFactory<Empleado,TipoSalario>("tipoSalarioEmpleado"));
         clmnCorreoEmpleado.setCellValueFactory(new PropertyValueFactory<Empleado,String>("emailEmpleado"));
 
@@ -347,7 +342,7 @@ public class Principal implements Initializable {
                     @Override
                     public void changed(ObservableValue<? extends Empleado> observable, Empleado valorAnterior, Empleado valorSeleccionado) {
                         if(valorSeleccionado!=null) {
-                            cmbRol.setValue(valorSeleccionado.getRolIdEmpleado());
+                            cmbRol.setValue(valorSeleccionado.getRolEmpleadoId());
                             dtpFechaIngresoEmpleado.setValue(valorSeleccionado.getFechaIngresoEmpleado().toLocalDate());
                             tfNacionalidadEmpleado.setText(valorSeleccionado.getNacionalidadEmpleado());
                             if (valorSeleccionado.getEmpleadoEsUsuarioSistema()) {

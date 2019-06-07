@@ -10,8 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import controlador.Empleado;
-import controlador.Usuario;
-import modelo.Cliente;
+import javafx.scene.control.Alert;
 import controlador.Sesion;
 
 public class ProcesoInformacionEmpleado {
@@ -56,11 +55,11 @@ public class ProcesoInformacionEmpleado {
 
     public int registrarEmpleado(Empleado unEmpleado) {
         int idempleado = unEmpleado.getIdEmpleado();
-        int rolid = unEmpleado.getRolIdEmpleado().getIdRol();
+        int rolEmpleadoId = unEmpleado.getRolEmpleadoId().getIdRolEmpleado();
         Date fechaingresoempleado = unEmpleado.getFechaIngresoEmpleado();
         String nacionalidadempleado = unEmpleado.getNacionalidadEmpleado();
         boolean empleadoesusuariosistema = unEmpleado.getEmpleadoEsUsuarioSistema();
-        int documentoid = Integer.valueOf(unEmpleado.getTipoDocumentoIdEmpleado().getIdDocumentoIdentidad());
+        int tipodocumentoempleadoid = Integer.valueOf(unEmpleado.getTipoDocumentoIdEmpleado().getIdDocumentoIdentidad());
         String numerodocumentoidentidadempleado = unEmpleado.getNumeroDocumentoIdentidadEmpleado();
         String lugarexpediciondocumentoidentiadempleado = unEmpleado.getLugarExpediciónDocumentoIdentiadEmpleado();
         Date fechaexpediciondocumentoidentiadempleado = unEmpleado.getFechaExpedicionDocumentoIdentiadEmpleado();
@@ -81,24 +80,24 @@ public class ProcesoInformacionEmpleado {
         String barrioempleado = unEmpleado.getBarrioEmpleado();
         String nombrepersonacontactoempleado = unEmpleado.getNombrePersonaContactoEmpleado();
         String celualarpersonacontactoempleado = unEmpleado.getCelualarPersonaContactoEmpleado();
-        int tipocontratoempleado = Integer.valueOf(unEmpleado.getTipoSalarioEmpleado().getIdTipoContrato());
+        int tiposalarioempleadoid = Integer.valueOf(unEmpleado.getTipoSalarioEmpleado().getIdTipoSalario());
         int sueldobaseempleado = Integer.valueOf(unEmpleado.getSueldoBaseEmpleado());
 
-        String registroEmpleado = "INSERT INTO empleado(rolid,fechaingresoempleado,nacionalidadempleado," +
-                "empleadoesusuariosistema,documentoid,numerodocumentoidentidadempleado,lugarexpediciondocumentoidentiadempleado," +
+        String registroEmpleado = "INSERT INTO empleado(rolEmpleadoId,fechaingresoempleado,nacionalidadempleado," +
+                "empleadoesusuariosistema,tipodocumentoempleadoid,numerodocumentoidentidadempleado,lugarexpediciondocumentoidentiadempleado," +
                 "fechaexpediciondocumentoidentiadempleado,lugarnacimientoempleado,fechanacimientoempleado," +
                 "nombresempleado,apellidosempleado,emailempleado,codigopostalempleado,telefonoempleado,celularempleado," +
                 "telefonoalternativoempleado,direccionempleado,departamentoempleado,municipioempleado,localidadempleado," +
-                "upzempleado,barrioempleado,nombrepersonacontactoempleado,celualarpersonacontactoempleado,tipocontratoempleado,sueldobaseempleado) " +
+                "upzempleado,barrioempleado,nombrepersonacontactoempleado,celualarpersonacontactoempleado,tiposalarioempleadoid,sueldobaseempleado) " +
                 "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement inst = conexion.getConnection().prepareStatement(registroEmpleado);
-            inst.setInt(1, rolid);
+            inst.setInt(1, rolEmpleadoId);
             inst.setDate(2, fechaingresoempleado);
             inst.setString(3, nacionalidadempleado);
             inst.setBoolean(4, empleadoesusuariosistema);
-            inst.setInt(5, documentoid);
+            inst.setInt(5, tipodocumentoempleadoid);
             inst.setString(6, numerodocumentoidentidadempleado);
             inst.setString(7, lugarexpediciondocumentoidentiadempleado);
             inst.setDate(8, fechaexpediciondocumentoidentiadempleado);
@@ -119,7 +118,7 @@ public class ProcesoInformacionEmpleado {
             inst.setString(23, barrioempleado);
             inst.setString(24, nombrepersonacontactoempleado);
             inst.setString(25, celualarpersonacontactoempleado);
-            inst.setInt(26, tipocontratoempleado);
+            inst.setInt(26, tiposalarioempleadoid);
             inst.setInt(27, sueldobaseempleado);
 
             return inst.executeUpdate();
@@ -164,11 +163,11 @@ public class ProcesoInformacionEmpleado {
 
     public int actualizarDatosEmpleado(Empleado unEmpleado) {
         int idempleado = unEmpleado.getIdEmpleado();
-        int rolid = unEmpleado.getRolIdEmpleado().getIdRol();
+        int rolEmpleadoId = unEmpleado.getRolEmpleadoId().getIdRolEmpleado();
         Date fechaingresoempleado = unEmpleado.getFechaIngresoEmpleado();
         String nacionalidadempleado = unEmpleado.getNacionalidadEmpleado();
         boolean empleadoesusuariosistema = unEmpleado.getEmpleadoEsUsuarioSistema();
-        int documentoid = Integer.valueOf(unEmpleado.getTipoDocumentoIdEmpleado().getIdDocumentoIdentidad());
+        int tipodocumentoempleadoid = Integer.valueOf(unEmpleado.getTipoDocumentoIdEmpleado().getIdDocumentoIdentidad());
         String numerodocumentoidentidadempleado = unEmpleado.getNumeroDocumentoIdentidadEmpleado();
         String lugarexpediciondocumentoidentiadempleado = unEmpleado.getLugarExpediciónDocumentoIdentiadEmpleado();
         Date fechaexpediciondocumentoidentiadempleado = unEmpleado.getFechaExpedicionDocumentoIdentiadEmpleado();
@@ -189,23 +188,23 @@ public class ProcesoInformacionEmpleado {
         String barrioempleado = unEmpleado.getBarrioEmpleado();
         String nombrepersonacontactoempleado = unEmpleado.getNombrePersonaContactoEmpleado();
         String celualarpersonacontactoempleado = unEmpleado.getCelualarPersonaContactoEmpleado();
-        int tipocontratoempleado = Integer.valueOf(unEmpleado.getTipoSalarioEmpleado().getIdTipoContrato());
+        int tiposalarioempleadoid = Integer.valueOf(unEmpleado.getTipoSalarioEmpleado().getIdTipoSalario());
         int sueldobaseempleado = Integer.valueOf(unEmpleado.getSueldoBaseEmpleado());
-        String actualizaEmleado = "UPDATE empleado SET rolid=?, fechaingresoempleado=?, nacionalidadempleado=?, empleadoesusuariosistema=?, " +
-                "documentoid=?, numerodocumentoidentidadempleado=?, lugarexpediciondocumentoidentiadempleado=?, fechaexpediciondocumentoidentiadempleado=?, " +
+        String actualizaEmleado = "UPDATE empleado SET rolEmpleadoId=?, fechaingresoempleado=?, nacionalidadempleado=?, empleadoesusuariosistema=?, " +
+                "tipodocumentoempleadoid=?, numerodocumentoidentidadempleado=?, lugarexpediciondocumentoidentiadempleado=?, fechaexpediciondocumentoidentiadempleado=?, " +
                 "lugarnacimientoempleado=?, fechanacimientoempleado=?, nombresempleado=?, apellidosempleado=?, emailempleado=?, codigopostalempleado=?, " +
                 "telefonoempleado=?, celularempleado=?, telefonoalternativoempleado=?, direccionempleado=?, departamentoempleado=?, municipioempleado=?, " +
-                "localidadempleado=?, upzempleado=?, barrioempleado=?, nombrepersonacontactoempleado=?, celualarpersonacontactoempleado=?, tipocontratoempleado=?, sueldobaseempleado=?\n" +
+                "localidadempleado=?, upzempleado=?, barrioempleado=?, nombrepersonacontactoempleado=?, celualarpersonacontactoempleado=?, tiposalarioempleadoid=?, sueldobaseempleado=?\n" +
                 "\t WHERE idempleado=?";
 
         try {
             PreparedStatement inst = conexion.getConnection().prepareStatement(actualizaEmleado);
             inst.setInt(28,idempleado);
-            inst.setInt(1, rolid);
+            inst.setInt(1, rolEmpleadoId);
             inst.setDate(2, fechaingresoempleado);
             inst.setString(3, nacionalidadempleado);
             inst.setBoolean(4, empleadoesusuariosistema);
-            inst.setInt(5, documentoid);
+            inst.setInt(5, tipodocumentoempleadoid);
             inst.setString(6, numerodocumentoidentidadempleado);
             inst.setString(7, lugarexpediciondocumentoidentiadempleado);
             inst.setDate(8, fechaexpediciondocumentoidentiadempleado);
@@ -226,7 +225,7 @@ public class ProcesoInformacionEmpleado {
             inst.setString(23, barrioempleado);
             inst.setString(24, nombrepersonacontactoempleado);
             inst.setString(25, celualarpersonacontactoempleado);
-            inst.setInt(26, tipocontratoempleado);
+            inst.setInt(26, tiposalarioempleadoid);
             inst.setInt(27, sueldobaseempleado);
 
             return inst.executeUpdate();
@@ -248,9 +247,18 @@ public class ProcesoInformacionEmpleado {
             return inst.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
+            Alert mensaje=new Alert(Alert.AlertType.INFORMATION);
+            mensaje.setTitle("HJCSoft");
+            mensaje.setContentText("Ha ocurrido un error.\n"+e);
+            mensaje.setHeaderText("Error:");
+            mensaje.show();
             return 0;
         } catch (Exception ex) {
-            System.out.println(ex.toString());
+            System.out.println(ex.toString());Alert mensaje=new Alert(Alert.AlertType.INFORMATION);
+            mensaje.setTitle("HJCSoft");
+            mensaje.setContentText("Ha ocurrido un error.\n"+ex);
+            mensaje.setHeaderText("Error:");
+            mensaje.show();
             return 0;
         }
     }

@@ -12,44 +12,44 @@ import java.sql.Statement;
 
 
 public class Rol{
-    private IntegerProperty idRol;
-    private StringProperty nombreRol;
+    private IntegerProperty idRolEmpleado;
+    private StringProperty nombreRolEmpleado;
 
-    public Rol(int idRol, String nombreRol) {
-        this.idRol = new SimpleIntegerProperty(idRol);
-        this.nombreRol = new SimpleStringProperty(nombreRol);
+    public Rol(int idRolEmpleado, String nombreRolEmpleado) {
+        this.idRolEmpleado = new SimpleIntegerProperty(idRolEmpleado);
+        this.nombreRolEmpleado = new SimpleStringProperty(nombreRolEmpleado);
     }
 
-    //Metodos atributo: idRol
-    public int getIdRol() {
-        return idRol.get();
+    //Metodos atributo: idRolEmpleado
+    public int getIdRolEmpleado() {
+        return idRolEmpleado.get();
     }
-    public void setIdRol(int idRol) {
-        this.idRol = new SimpleIntegerProperty(idRol);
+    public void setIdRolEmpleado(int idRolEmpleado) {
+        this.idRolEmpleado = new SimpleIntegerProperty(idRolEmpleado);
     }
     public IntegerProperty IdRolProperty() {
-        return idRol;
+        return idRolEmpleado;
     }
-    //Metodos atributo: nombreRol
-    public String getNombreRol() {
-        return nombreRol.get();
+    //Metodos atributo: nombreRolEmpleado
+    public String getNombreRolEmpleado() {
+        return nombreRolEmpleado.get();
     }
-    public void setNombreRol(String nombreRol) {
-        this.nombreRol = new SimpleStringProperty(nombreRol);
+    public void setNombreRolEmpleado(String nombreRolEmpleado) {
+        this.nombreRolEmpleado = new SimpleStringProperty(nombreRolEmpleado);
     }
     public StringProperty NombreRolProperty() {
-        return nombreRol;
+        return nombreRolEmpleado;
     }
 
     public static void llenarInformacion(Connection connection, ObservableList<Rol> lista){
         try{
             Statement statement = connection.createStatement();
-            ResultSet resultado = statement.executeQuery("SELECT idrol, nombrerol FROM rol;");
+            ResultSet resultado = statement.executeQuery("SELECT idrolempleado, nombrerolempleado FROM rolempleado;");
             while (resultado.next()){
                 lista.add(
                     new Rol(
-                            resultado.getInt("idrol"),
-                            resultado.getString("nombrerol")
+                            resultado.getInt("idrolempleado"),
+                            resultado.getString("nombrerolempleado")
                     )
                 );
             }
@@ -60,6 +60,6 @@ public class Rol{
 
     @Override
     public String toString(){
-        return nombreRol.get();
+        return nombreRolEmpleado.get();
     }
 }
